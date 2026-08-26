@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ── Hero Partner Marquee ── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+.animate-marquee:hover,
+.group:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+/* ── Hero Background Mobile Position ── */
+.hero-bg {
+  --hero-bg-pos: 90% bottom;
+}
+@media (max-width: 767px) {
+  .hero-bg {
+    --hero-bg-pos: 81% 2%;
+  }
+}
+
+/* ── Updates Marquee ── */
+.updates-marquee {
+  display: flex;
+  transition: transform 0.7s cubic-bezier(0.2, 1, 0.3, 1);
+  gap: 24px;
+  transform: translateX(var(--translate-mobile, 0px));
+}
+@media (min-width: 768px) {
+  .updates-marquee {
+    gap: 24px;
+    transform: translateX(var(--translate-desktop, 0px));
+  }
+}
+@media (min-width: 1024px) {
+  .updates-marquee {
+    gap: 32px;
+  }
+}
+.update-card-container {
+  flex-shrink: 0;
+  transition: opacity 0.3s;
+  width: 85vw;
+  opacity: 0.4;
+}
+.update-card-container.active {
+  opacity: 1;
+}
+@media (min-width: 768px) {
+  .update-card-container {
+    width: calc(50% - 12px);
+    opacity: 1 !important;
+  }
+}
+@media (min-width: 1024px) {
+  .update-card-container {
+    width: calc(33.333% - 21.33px);
+  }
+}

@@ -1,0 +1,229 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { BASE_URL } from "@/app/ui/baceurl";
+
+interface BlogPost {
+  title: string;
+  excerpt: string;
+  content: string;
+  created_at: string;
+  author: string;
+  image: string;
+  read_time: string;
+  tag: string;
+  slug: string;
+}
+
+type PaginatedResponse<T> = {
+  next?: string | null;
+  results?: T[];
+};
+
+function getApiItems<T>(data: unknown): T[] {
+  if (Array.isArray(data)) {
+    return data as T[];
+  }
+
+  if (data && typeof data === "object") {
+    const paginated = data as PaginatedResponse<T>;
+    return Array.isArray(paginated.results) ? paginated.results : [];
+  }
+
+  return [];
+}
+
+async function fetchAllApiItems<T>(path: string): Promise<T[]> {
+  const items: T[] = [];
+  let url: string | null = new URL(path, BASE_URL).toString();
+
+  while (url) {
+    const currentUrl = url;
+    const response: Response = await fetch(currentUrl, { cache: "no-store" });
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch ${currentUrl}: ${response.status}`);
+    }
+
+    const data = await response.json();
+    items.push(...getApiItems<T>(data));
+    url =
+      data && typeof data === "object" && "next" in data && typeof data.next === "string"
+        ? new URL(data.next, BASE_URL).toString()
+        : null;
+  }
+
+  return items;
+}
+
+export default function HomeUpdates() {
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const blogs = await fetchAllApiItems<BlogPost>("/api/blogs/");
+        setBlogPosts(blogs);
+      } catch (error) {
+        console.error("Error fetching blogs for updates:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchBlogs();
+  }, []);
+
+  const nextSlide = () => {
+    if (blogPosts.length === 0) return;
+    setCurrentIndex((prev) => (prev + 1) % blogPosts.length);
+  };
+
+  const prevSlide = () => {
+    if (blogPosts.length === 0) return;
+    setCurrentIndex((prev) => (prev - 1 + blogPosts.length) % blogPosts.length);
+  };
+
+  // Auto-play logic
+  useEffect(() => {
+    if (blogPosts.length === 0) return;
+    const timer = setInterval(nextSlide, 5000);
+    return () => clearInterval(timer);
+  }, [currentIndex, blogPosts.length]);
+
+  const formatDate = (dateString: string) => {
+    try {
+      const d = new Date(dateString);
+      return d.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }).toUpperCase();
+    } catch (e) {
+      return dateString;
+    }
+  };
+
+  if (loading) {
+    return (
+      <section className="relative w-full py-12 md:py-32 bg-black overflow-hidden flex items-center justify-center min-h-100">
+        <div className="text-center">
+          <div className="w-10 h-10 border-4 border-[#00b14f] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <p className="text-xs font-bold uppercase tracking-widest text-white/40">Loading Updates...</p>
+        </div>
+      </section>
+    );
+  }
+
+  if (blogPosts.length === 0) {
+    return null;
+  }
+
+  return (
+    <section 
+      className="relative w-full py-12 md:py-32 bg-black overflow-hidden"
+    >
+      <div className="max-w-7xl mx-auto px-6">
+
+        {/* Section Header: Title & Navigation */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+          <div className="max-w-xl">
+            <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4 text-center md:text-left">
+              Content <span className="text-[#00b14f]">Hub</span>
+            </h2>
+            <p className="text-white/40 text-sm md:text-base font-medium text-center md:text-left">
+              Stay informed about the EV revolution and Relux milestones.
+            </p>
+          </div>
+
+          <div className="hidden md:flex items-center gap-3">
+            <button
+              onClick={prevSlide}
+              className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-white/30 transition-all active:scale-95"
+            >
+              <FiChevronLeft size={20} />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-white/30 transition-all active:scale-95"
+            >
+              <FiChevronRight size={20} />
+            </button>
+          </div>
+        </div>
+
+        {/* Sliding Carousel Viewport */}
+        <div className="relative overflow-hidden group">
+          <div
+            className="updates-marquee"
+            style={{
+              '--translate-mobile': `calc(-${currentIndex} * (85vw + 24px))`,
+              '--translate-desktop': `-${currentIndex * (100 / (blogPosts.length || 1))}%`
+            } as React.CSSProperties}
+          >
+            {blogPosts.map((post, i) => (
+              <div
+                key={i}
+                className={`update-card-container ${i === currentIndex ? 'active' : ''}`}
+              >
+                <Link href={`/activity-hub/blogs/${post.slug}`}>
+                  <article
+                    className="group flex flex-col bg-[#0a0a0a] rounded-3xl overflow-hidden border border-white/5 hover:border-[#00b14f]/30 transition-all duration-500 h-full cursor-pointer"
+                  >
+                    {/* Image Container with Floating Tag */}
+                    <div className="relative aspect-16/10 overflow-hidden shrink-0">
+                      <img
+                        src={post.image ? (post.image.startsWith('http') ? post.image : `${BASE_URL}${post.image.startsWith('/') ? '' : '/'}${post.image}`) : "/blog/blog_img.png"}
+                        alt={post.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute top-4 left-4 z-10">
+                        <span className="px-4 py-1.5 bg-[#00b14f] text-white text-[10px] font-bold rounded-full uppercase tracking-wider shadow-lg">
+                          {post.tag || "EV"}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Content Area */}
+                    <div className="p-8 flex flex-col flex-1">
+                      <time className="text-white/30 text-[10px] font-bold uppercase tracking-widest mb-4">
+                        {formatDate(post.created_at)}
+                      </time>
+
+                      <h3 className="text-lg md:text-xl font-bold text-white mb-6 leading-snug wrap-break-word">
+                        {post.title}
+                      </h3>
+
+                      <div className="mt-auto">
+                        <div className="flex items-center gap-2 text-[#00b14f] font-bold text-xs uppercase tracking-widest group/link">
+                          <span>Read Full Story</span>
+                          <FiChevronRight className="transition-transform group-hover/link:translate-x-1" />
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile-only Navigation Buttons (Bottom Centered) */}
+        <div className="flex md:hidden items-center justify-center gap-4 mt-10">
+          <button
+            onClick={prevSlide}
+            className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-white/30 transition-all active:scale-95"
+          >
+            <FiChevronLeft size={24} />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-white/30 transition-all active:scale-95"
+          >
+            <FiChevronRight size={24} />
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
