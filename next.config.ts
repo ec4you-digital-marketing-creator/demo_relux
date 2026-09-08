@@ -71,6 +71,33 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async headers() {
+    return [
+      {
+        source: "/llms.txt",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "text/plain; charset=utf-8",
+          },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400",
+          },
+        ],
+      },
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "Origin-Trial",
+            value:
+              "Ar3e18jUYYlmpRl2ByRmxAw8GiIq2VfXOWcXMYtpnxChtOF6rRe4YaoKfMgjl1XLP0IqrDXU4JjnTLAcBziP0g8AAABkeyJvcmlnaW4iOiJodHRwczovL3JlbHV4ZWxlY3RyaWMuY29tOjQ0MyIsImZlYXR1cmUiOiJXZWJNQ1AiLCJleHBpcnkiOjE3OTQ4NzM2MDAsImlzU3ViZG9tYWluIjp0cnVlfQ==",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

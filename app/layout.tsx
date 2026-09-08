@@ -1,37 +1,30 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Syne, DM_Sans, Poppins } from "next/font/google";
+import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import WebMCPRegistry from "../components/WebMCPRegistry";
 import { SITE_URL } from "@/app/ui/baceurl";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-});
-
-const syne = Syne({
-  subsets: ["latin"],
-  weight: ["400", "600"],
-  variable: "--font-syne",
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-dm-sans",
+  display: "swap",
 });
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
   variable: "--font-poppins",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -74,7 +67,10 @@ export const metadata: Metadata = {
     "top 5 EV manufacturers",
     "leading EV companies in India",
     "world’s largest EV manufacturer",
-    "top 10 EV manufacturers in India"
+    "top 10 EV manufacturers in India",
+    "Unified Bharat e-Charge",
+    "UBC EV charging station India",
+    "Beckn protocol EV charging"
   ],
   alternates: {
     canonical: `${SITE_URL}/`,
@@ -106,7 +102,10 @@ export const metadata: Metadata = {
     site: "@reluxelectric",
   },
   verification: {
-    google: "0FtLFyX0EBjDfEpgcmJ8QguEoC4JFLW0ehPFpeZcYAE",
+    google: [
+      "0FtLFyX0EBjDfEpgcmJ8QguEoC4JFLW0ehPFpeZcYAE",
+      "h6a9A3nDnraOLjBk7uSACpv5R_yE9a9IMSx-xzR-xe4",
+    ],
   },
   manifest: "/manifest.json",
   other: {
@@ -124,13 +123,30 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} ${dmSans.variable} ${poppins.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} h-full antialiased`}
     >
       <head suppressHydrationWarning>
+        {/* WebMCP Origin Trial Token */}
+        <meta
+          httpEquiv="origin-trial"
+          content="Ar3e18jUYYlmpRl2ByRmxAw8GiIq2VfXOWcXMYtpnxChtOF6rRe4YaoKfMgjl1XLP0IqrDXU4JjnTLAcBziP0g8AAABkeyJvcmlnaW4iOiJodHRwczovL3JlbHV4ZWxlY3RyaWMuY29tOjQ0MyIsImZlYXR1cmUiOiJXZWJNQ1AiLCJleHBpcnkiOjE3OTQ4NzM2MDAsImlzU3ViZG9tYWluIjp0cnVlfQ=="
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preload" href="/images/relux-electric-tamilnadu-banner.webp" as="image" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://core.reluxelectric.com" />
+        <link
+          rel="preload"
+          href="/images/relux-electric-tamilnadu-banner.webp"
+          as="image"
+          fetchPriority="high"
+        />
+        {/* Google Preferred Sources – helps users follow Relux Electric in Google Search / AI Mode */}
+        <Script
+          async
+          src="https://news.google.com/swg/js/v1/publisher.js"
+          strategy="afterInteractive"
+        />
         {/* Google tag (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-CDC35ZMGSP"
@@ -239,12 +255,15 @@ export default function RootLayout({
                   "EV Charging Station Franchise",
                   "DC Fast Chargers",
                   "OCPP Charging Protocol",
+                  "Unified Bharat e-Charge Protocol (UBC)",
+                  "Beckn Protocol EV Charging",
                   "Clean Energy & E-Mobility"
                 ]
               }
             ])
           }}
         />
+        <WebMCPRegistry />
         <Navbar />
         <main suppressHydrationWarning className="grow">{children}</main>
         <Footer />

@@ -174,20 +174,20 @@ export default function Navbar() {
           {/* Right Section: Socials (Desktop) Pill */}
           <div className="hidden lg:flex items-center space-x-3 xl:space-x-4">
             <div className="flex items-center space-x-4 xl:space-x-5.5 bg-[#151515] border border-white/10 rounded-full px-6 py-2 h-14">
-              <Link href="https://www.facebook.com/reluxelectric" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">
-                <FaFacebookF className="w-4 h-4" />
+              <Link href="https://www.facebook.com/reluxelectric" target="_blank" rel="noopener noreferrer" aria-label="Follow Relux Electric on Facebook" className="text-zinc-400 hover:text-white transition-colors">
+                <FaFacebookF className="w-4 h-4" aria-hidden="true" />
               </Link>
-              <Link href="https://www.instagram.com/reluxelectric/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">
-                <FaInstagram className="w-4 h-4 xl:w-4.5 xl:h-4.5" />
+              <Link href="https://www.instagram.com/reluxelectric/" target="_blank" rel="noopener noreferrer" aria-label="Follow Relux Electric on Instagram" className="text-zinc-400 hover:text-white transition-colors">
+                <FaInstagram className="w-4 h-4 xl:w-4.5 xl:h-4.5" aria-hidden="true" />
               </Link>
-              <Link href="https://www.linkedin.com/company/reluxelectric/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">
-                <FaLinkedinIn className="w-4 h-4" />
+              <Link href="https://www.linkedin.com/company/reluxelectric/" target="_blank" rel="noopener noreferrer" aria-label="Follow Relux Electric on LinkedIn" className="text-zinc-400 hover:text-white transition-colors">
+                <FaLinkedinIn className="w-4 h-4" aria-hidden="true" />
               </Link>
-              <Link href="https://www.youtube.com/@reluxelectric7550" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">
-                <FaYoutube className="w-4 h-4 xl:w-4.5 xl:h-4.5" />
+              <Link href="https://www.youtube.com/@reluxelectric7550" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to Relux Electric YouTube" className="text-zinc-400 hover:text-white transition-colors">
+                <FaYoutube className="w-4 h-4 xl:w-4.5 xl:h-4.5" aria-hidden="true" />
               </Link>
-              <Link href="https://x.com/reluxelectric" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">
-                <FaXTwitter className="w-4 h-4 xl:w-4.5 xl:h-4.5" />
+              <Link href="https://x.com/reluxelectric" target="_blank" rel="noopener noreferrer" aria-label="Follow Relux Electric on X (Twitter)" className="text-zinc-400 hover:text-white transition-colors">
+                <FaXTwitter className="w-4 h-4 xl:w-4.5 xl:h-4.5" aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -270,11 +270,11 @@ export default function Navbar() {
         {/* Mobile Social Area */}
         <div className="pt-6 px-6 mt-auto">
           <div className="flex items-center justify-center space-x-5 bg-[#151515] border border-white/10 rounded-full px-5 py-3.5 backdrop-blur-md">
-            <Link href="https://www.facebook.com/reluxelectric" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-[#4ade80] transition-colors"><FaFacebookF className="w-5 h-5" /></Link>
-            <Link href="https://www.instagram.com/reluxelectric/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-[#4ade80] transition-colors"><FaInstagram className="w-5 h-5" /></Link>
-            <Link href="https://www.linkedin.com/company/reluxelectric/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-[#4ade80] transition-colors"><FaLinkedinIn className="w-4 h-4" /></Link>
-            <Link href="https://www.youtube.com/@reluxelectric7550" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-[#4ade80] transition-colors"><FaYoutube className="w-5 h-5" /></Link>
-            <Link href="https://x.com/reluxelectric" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-[#4ade80] transition-colors"><FaXTwitter className="w-5 h-5" /></Link>
+            <Link href="https://www.facebook.com/reluxelectric" target="_blank" rel="noopener noreferrer" aria-label="Follow Relux Electric on Facebook" className="text-zinc-400 hover:text-[#4ade80] transition-colors"><FaFacebookF className="w-5 h-5" aria-hidden="true" /></Link>
+            <Link href="https://www.instagram.com/reluxelectric/" target="_blank" rel="noopener noreferrer" aria-label="Follow Relux Electric on Instagram" className="text-zinc-400 hover:text-[#4ade80] transition-colors"><FaInstagram className="w-5 h-5" aria-hidden="true" /></Link>
+            <Link href="https://www.linkedin.com/company/reluxelectric/" target="_blank" rel="noopener noreferrer" aria-label="Follow Relux Electric on LinkedIn" className="text-zinc-400 hover:text-[#4ade80] transition-colors"><FaLinkedinIn className="w-4 h-4" aria-hidden="true" /></Link>
+            <Link href="https://www.youtube.com/@reluxelectric7550" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to Relux Electric YouTube" className="text-zinc-400 hover:text-[#4ade80] transition-colors"><FaYoutube className="w-5 h-5" aria-hidden="true" /></Link>
+            <Link href="https://x.com/reluxelectric" target="_blank" rel="noopener noreferrer" aria-label="Follow Relux Electric on X (Twitter)" className="text-zinc-400 hover:text-[#4ade80] transition-colors"><FaXTwitter className="w-5 h-5" aria-hidden="true" /></Link>
           </div>
         </div>
       </div>

@@ -159,7 +159,14 @@ export default function ApplicationFormSection() {
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-4"
+              {...({
+                "tool-name": "submit_franchise_enquiry",
+                "tool-description": "Submit an EV Charging Station Franchise Application with Relux Electric"
+              } as any)}
+            >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
                   <label className="text-[10px] text-white/40 font-black tracking-widest uppercase">Full Name *</label>

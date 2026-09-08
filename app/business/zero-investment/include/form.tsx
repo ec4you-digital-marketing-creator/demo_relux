@@ -119,7 +119,7 @@ export default function ZeroForm() {
             className="order-2 lg:order-1"
           >
             <div className="p-10 md:p-14 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] relative shadow-2xl">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#00b14f]/30 to-transparent" />
+              <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-[#00b14f]/30 to-transparent" />
               
               {success ? (
                 <motion.div 
@@ -142,7 +142,14 @@ export default function ZeroForm() {
                   </button>
                 </motion.div>
               ) : (
-                <form className="space-y-5" onSubmit={handleSubmit}>
+                <form
+                  className="space-y-5"
+                  onSubmit={handleSubmit}
+                  {...({
+                    "tool-name": "submit_zero_investment_enquiry",
+                    "tool-description": "Submit a Zero Investment EV Charger Host Application with Relux Electric"
+                  } as any)}
+                >
                   {error && (
                     <div className="bg-red-500/10 border border-red-500/20 text-red-500 text-[10px] font-bold uppercase tracking-wider p-4 rounded-xl text-center">
                       {error}
@@ -317,7 +324,7 @@ export default function ZeroForm() {
           >
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <span className="w-8 h-[1px] bg-[#00b14f]" />
+                <span className="w-8 h-px bg-[#00b14f]" />
                 <span className="text-[#00b14f] text-[10px] md:text-xs font-black uppercase tracking-[0.4em]">Enquiry</span>
               </div>
               <h2 className="text-3xl md:text-5xl font-black text-white leading-[1.1] tracking-tighter uppercase mb-6">

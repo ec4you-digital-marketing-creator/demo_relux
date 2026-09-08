@@ -19,7 +19,7 @@ const DEFAULT_MODELS = [
       "Avg. EB Tariff: ₹12/unit",
     ],
     desc: "Compact DC fast charger suitable for restaurants, resorts & urban hubs.",
-    image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80",
+    image: "/franchise/30 kW.webp",
   },
   {
     title: "STD 60KW",
@@ -34,7 +34,7 @@ const DEFAULT_MODELS = [
       "Avg. EB Tariff: ₹12/unit",
     ],
     desc: "Dual CCS2 fast charger ideal for busy state highways and city centers.",
-    image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=600&q=80",
+    image: "/franchise/60 kW.webp",
   },
   {
     title: "STD 120KW",
@@ -49,7 +49,7 @@ const DEFAULT_MODELS = [
       "Avg. EB Tariff: ₹12/unit",
     ],
     desc: "Heavy-duty ultra fast dual gun station for expressways & high traffic.",
-    image: "https://images.unsplash.com/photo-1558441819-861a3575b9fb?auto=format&fit=crop&w=600&q=80",
+    image: "/franchise/120 kW.webp",
   },
   {
     title: "SUPER HUB",
@@ -64,23 +64,23 @@ const DEFAULT_MODELS = [
       "Avg. EB Tariff: ₹12/unit",
     ],
     desc: "Multi-gun charging canopy hub for fleet operators & commercial plazas.",
-    image: "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=600&q=80",
+    image: "/franchise/Super Hub.webp",
   },
-  {
-    title: "MEGA HUB",
-    subtitle: "360 KW POWER SETUP",
-    capacity: "360 kW",
-    price: "₹ 2 Crore",
-    space: "5,000 – 100,000 sq. ft",
-    features: [
-      "Space Requirement: 5,000–100,000 sq. ft",
-      "ARAI Certified",
-      "IP55 / IP66 Protection",
-      "Avg. EB Tariff: ₹12/unit",
-    ],
-    desc: "Flagship multi-dispenser EV plaza supporting cars, buses & trucks.",
-    image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80",
-  },
+  // {
+  //   title: "MEGA HUB",
+  //   subtitle: "360 KW POWER SETUP",
+  //   capacity: "360 kW",
+  //   price: "₹ 2 Crore",
+  //   space: "5,000 – 100,000 sq. ft",
+  //   features: [
+  //     "Space Requirement: 5,000–100,000 sq. ft",
+  //     "ARAI Certified",
+  //     "IP55 / IP66 Protection",
+  //     "Avg. EB Tariff: ₹12/unit",
+  //   ],
+  //   desc: "Flagship multi-dispenser EV plaza supporting cars, buses & trucks.",
+  //   image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80",
+  // },
 ];
 
 export default function FranchiseModels() {
@@ -143,13 +143,14 @@ export default function FranchiseModels() {
         {/* Header */}
         <div className="flex flex-col items-center mb-14 max-w-4xl mx-auto space-y-3">
           <span className="text-[#00b14f] text-xs font-black uppercase tracking-[0.25em]">
-            OUR FRANCHISE MODELS
+            OUR EV CHARGING FRANCHISE MODELS
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tight leading-tight">
-            CHOOSE YOUR <span className="text-[#00b14f]">RELUX FRANCHISE SETUP</span>
+            FIND THE RIGHT SETUP   <span className="text-[#00b14f]">FOR YOUR LOCATION</span>
           </h2>
           <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium">
-            Compare our available charging station models and find the setup that fits your business goals and site potential.
+            Not every site needs the same charging capacity.
+            A city location with limited space has different requirements from a highway site or a large commercial property. Relux offers multiple charging configurations so the infrastructure can be matched to the location.
           </p>
         </div>
 
@@ -237,7 +238,7 @@ export default function FranchiseModels() {
         </div>
 
         {/* Floating Common Note Banner at Bottom */}
-        <div className="mt-12 max-w-4xl mx-auto bg-white rounded-3xl border border-slate-100 shadow-xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
+        {/* <div className="mt-12 max-w-4xl mx-auto bg-white rounded-3xl border border-slate-100 shadow-xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-full bg-[#e8f8ef] text-[#00b14f] flex items-center justify-center shrink-0">
               <Info className="w-6 h-6" />
@@ -247,7 +248,7 @@ export default function FranchiseModels() {
             </div>
           </div>
 
-        </div>
+        </div> */}
 
       </div>
 

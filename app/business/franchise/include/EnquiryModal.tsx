@@ -127,6 +127,7 @@ const EnquiryModal = ({ isOpen, onClose, modelTitle }: EnquiryModalProps) => {
           {/* Close Button */}
           <button
             onClick={onClose}
+            aria-label="Close modal"
             className="absolute top-4 right-4 md:top-6 md:right-6 z-50 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-[#ea3323] transition-colors"
           >
             <FiX className="w-4 h-4 md:w-5 md:h-5" />
@@ -187,7 +188,14 @@ const EnquiryModal = ({ isOpen, onClose, modelTitle }: EnquiryModalProps) => {
               </div>
             )}
 
-            <form className="space-y-4" onSubmit={handleSubmit}>
+            <form
+              className="space-y-4"
+              onSubmit={handleSubmit}
+              {...({
+                "tool-name": "submit_franchise_enquiry_modal",
+                "tool-description": "Submit a quick EV Charging Station Franchise Enquiry"
+              } as any)}
+            >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
                   <label className="text-[9px] text-white/30 font-black tracking-widest pl-1">Name</label>

@@ -107,7 +107,7 @@ export default function ContactForm() {
 
   return (
     <section className="relative w-full py-20 bg-black overflow-hidden font-sans">
-      <div className="max-w-[1240px] mx-auto px-6 relative z-10">
+      <div className="max-w-310 mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_minmax(450px,500px)] gap-16 lg:gap-24 items-start">
           
           {/* Left Column: Contact Info & FAQ */}
@@ -125,9 +125,9 @@ export default function ContactForm() {
             {/* Contact Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 max-w-md">
               {/* Phone Card */}
-              <div className="flex items-start gap-4 p-5 rounded-xl bg-[#1a1c23] border border-white/[0.02]">
+              <div className="flex items-start gap-4 p-5 rounded-xl bg-[#1a1c23] border border-white/2">
                 <div className="shrink-0 w-10 h-10 rounded-[10px] bg-[#22242c] border border-white/5 flex items-center justify-center">
-                  <FiPhone className="w-[18px] h-[18px] text-[#4caf50]" />
+                  <FiPhone className="w-4.5 h-4.5 text-[#4caf50]" />
                 </div>
                 <div>
                   <h4 className="text-[#8e939a] text-[10px] font-bold uppercase tracking-wider mb-1">Phone Number</h4>
@@ -137,9 +137,9 @@ export default function ContactForm() {
               </div>
 
               {/* Email Card */}
-              <div className="flex items-start gap-4 p-5 rounded-xl bg-[#1a1c23] border border-white/[0.02]">
+              <div className="flex items-start gap-4 p-5 rounded-xl bg-[#1a1c23] border border-white/2">
                 <div className="shrink-0 w-10 h-10 rounded-[10px] bg-[#22242c] border border-white/5 flex items-center justify-center">
-                  <FiMail className="w-[18px] h-[18px] text-[#4caf50]" />
+                  <FiMail className="w-4.5 h-4.5 text-[#4caf50]" />
                 </div>
                 <div>
                   <h4 className="text-[#8e939a] text-[10px] font-bold uppercase tracking-wider mb-1">Email Support</h4>
@@ -151,7 +151,7 @@ export default function ContactForm() {
               {/* Support Card */}
               <div className="col-span-1 sm:col-span-2 lg:col-span-1 p-5 rounded-xl bg-[#0c2a16] border border-[#1b3d26]">
                 <div className="flex items-center gap-2 mb-3">
-                  <svg className="w-[18px] h-[18px] text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="w-4.5 h-4.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                   <h4 className="text-white text-[15px] font-extrabold">24/7 Technical Support</h4>
@@ -168,7 +168,7 @@ export default function ContactForm() {
             {/* Quick Questions FAQ */}
             <div className="max-w-md pt-4">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-[2px] bg-[#4caf50]" />
+                <div className="w-8 h-0.5 bg-[#4caf50]" />
                 <h3 className="text-[17px] font-extrabold text-white uppercase tracking-wider">Quick Questions</h3>
               </div>
               <div className="space-y-1">
@@ -201,7 +201,7 @@ export default function ContactForm() {
           {/* Right Column: Form & Map */}
           <div className="space-y-10">
             {/* Form */}
-            <div className="bg-[#1a1c23] rounded-[1.5rem] p-8 md:p-10 shadow-2xl border border-white/5 relative z-10 w-full">
+            <div className="bg-[#1a1c23] rounded-3xl p-8 md:p-10 shadow-2xl border border-white/5 relative z-10 w-full">
               {success ? (
                 <div className="flex flex-col items-center justify-center py-16 text-center space-y-6">
                   <div className="w-20 h-20 rounded-full bg-[#4caf50]/10 border border-[#4caf50]/20 flex items-center justify-center text-[#4caf50]">
@@ -225,7 +225,14 @@ export default function ContactForm() {
                     Fill out the form below and our team will get back to you within one business day.
                   </p>
                   
-                  <form className="space-y-5" onSubmit={handleSubmit}>
+                  <form
+                    className="space-y-5"
+                    onSubmit={handleSubmit}
+                    {...({
+                      "tool-name": "submit_contact_enquiry",
+                      "tool-description": "Submit a general contact or customer support inquiry to Relux Electric"
+                    } as any)}
+                  >
                     {error && (
                       <div className="bg-red-500/10 border border-red-500/20 text-red-500 text-[11px] font-bold uppercase tracking-wider p-4 rounded-xl text-center">
                         {error}
@@ -361,7 +368,7 @@ export default function ContactForm() {
                         className="w-full bg-[#4caf50] hover:bg-[#43a047] disabled:opacity-50 text-white font-extrabold text-[14px] py-4 rounded-md transition-all active:scale-[0.98] flex items-center justify-center gap-2 shadow-xl shadow-[#4caf50]/10"
                       >
                         {loading ? "Submitting Inquiry..." : "Submit Inquiry"}
-                        <FiSend className="w-[15px] h-[15px]" />
+                        <FiSend className="w-3.75 h-3.75" />
                       </button>
                     </div>
                   </form>
@@ -370,8 +377,8 @@ export default function ContactForm() {
             </div>
 
             {/* Google Map */}
-            <div className="bg-[#1a1c23] rounded-[1.5rem] p-2 shadow-2xl border border-white/5 overflow-hidden">
-              <div className="w-full h-[300px] rounded-[1.2rem] overflow-hidden">
+            <div className="bg-[#1a1c23] rounded-3xl p-2 shadow-2xl border border-white/5 overflow-hidden">
+              <div className="w-full h-75 rounded-[1.2rem] overflow-hidden">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.424990778029!2d80.20491577460434!3d13.00762211408842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52671df981257b%3A0xdac7f73a44cf46ed!2sRelux%20Electric%20Private%20Limited!5e1!3m2!1sen!2sin!4v1781007518971!5m2!1sen!2sin" 
                   width="100%" 

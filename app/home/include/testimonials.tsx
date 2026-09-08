@@ -9,7 +9,7 @@ const testimonials = [
     name: "Meera Reddy",
     content: "The support and vision of Relux Electric have been instrumental in our green energy transition goals. Their network reliability is unmatched.",
     stars: 5,
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop",
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=75&w=96&h=96&auto=format&fit=crop&crop=faces",
     guide: true
   },
   {
@@ -17,21 +17,21 @@ const testimonials = [
 
     content: "I want to thank my family, friends and team members for their support in making this occasion successful. It's a proud moment for our company and team.",
     stars: 5,
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=75&w=96&h=96&auto=format&fit=crop&crop=faces",
     guide: true
   },
   {
     name: "Tuglak Energy",
     content: "The support and vision of Relux Electric have been instrumental in our green energy transition goals. Their network reliability is unmatched.",
     stars: 5,
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop",
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=75&w=96&h=96&auto=format&fit=crop&crop=faces",
     guide: false
   },
   {
     name: "Gopal Krishnan",
     content: "Relux has completely changed how I plan my long-distance trips. I never have to worry about charging availability on the highways anymore.",
     stars: 5,
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=75&w=96&h=96&auto=format&fit=crop&crop=faces",
     guide: true
   },
 ];
@@ -91,7 +91,7 @@ export default function HomeTestimonials() {
       `}</style>
       
       {/* Background Decorative Green Glow (Relux Signature) */}
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#00b14f]/10 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-150 h-150 bg-[#00b14f]/10 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-[#00b14f]/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
@@ -99,7 +99,7 @@ export default function HomeTestimonials() {
 
           {/* Left Side: Header & Google Widget */}
           <div className="xl:col-span-4 xl:sticky xl:top-32 flex flex-col items-center xl:items-start h-full text-center xl:text-left">
-            <div className="flex flex-col h-full justify-between xl:min-h-[640px] py-2 w-full items-center xl:items-start">
+            <div className="flex flex-col h-full justify-between xl:min-h-160 py-2 w-full items-center xl:items-start">
               <div className="space-y-6 flex flex-col items-center xl:items-start">
                 <span className="inline-block px-0 text-[13px] font-bold tracking-[0.25em] uppercase text-[#00b14f]">
                   Social Proof
@@ -115,7 +115,7 @@ export default function HomeTestimonials() {
               </div>
 
               {/* Google Trust Authority Widget (Light Design) */}
-              <div className="w-full max-w-[280px] p-6 rounded-4xl bg-white border border-black/5 shadow-xl shadow-black/5 mt-8 mb-8 xl:mb-0">
+              <div className="w-full max-w-70 p-6 rounded-4xl bg-white border border-black/5 shadow-xl shadow-black/5 mt-8 mb-8 xl:mb-0">
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center justify-center xl:justify-start gap-2">
                     <svg className="w-6 h-6" viewBox="0 0 24 24">
@@ -148,6 +148,7 @@ export default function HomeTestimonials() {
                       <button
                         key={i}
                         onClick={() => setCurrentIndex(i)}
+                        aria-label={`Go to testimonial slide ${i + 1}`}
                         className={`h-1.5 rounded-full transition-all duration-500 ${currentIndex === i ? "w-10 bg-[#00b14f]" : "w-3 bg-black/10 hover:bg-black/20"
                           }`}
                       />
@@ -167,7 +168,7 @@ export default function HomeTestimonials() {
           </div>
 
           {/* Right Side: Double Card Sliding Viewport */}
-          <div className="xl:col-span-8 relative h-[450px] xl:h-[640px] mt-8 xl:mt-0">
+          <div className="xl:col-span-8 relative h-112.5 xl:h-160 mt-8 xl:mt-0">
             <div className="h-full overflow-hidden">
               <div className="testimonials-container">
                 {testimonials.map((t, i) => (
@@ -221,6 +222,8 @@ export default function HomeTestimonials() {
                                   src={t.avatar}
                                   alt={t.name}
                                   fill
+                                  sizes="56px"
+                                  loading="lazy"
                                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
                               ) : (
@@ -258,6 +261,7 @@ export default function HomeTestimonials() {
                     <button
                       key={i}
                       onClick={() => setCurrentIndex(i)}
+                      aria-label={`Go to testimonial slide ${i + 1}`}
                       className={`h-1.5 rounded-full transition-all duration-500 ${currentIndex === i ? "w-10 bg-[#00b14f]" : "w-3 bg-black/10 hover:bg-black/20"
                         }`}
                     />

@@ -61,16 +61,16 @@ export default function AboutUs() {
                             <span className="text-[#00b14f] text-[10px] md:text-xs font-black uppercase tracking-[0.4em]">About Us</span>
                         </motion.div>
 
-                        <motion.h2 
+                        <motion.h1 
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                             viewport={{ once: true }}
                             className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.1] mb-6 tracking-tighter uppercase"
                         >
-                            Solutions For All <br />
-                            <span className="text-[#00b14f]">EV Charging</span> Programs.
-                        </motion.h2>
+                            WE BUILD THE INFRASTRUCTURE THAT
+                            <span className="text-[#00b14f]"> KEEPS EVs MOVING.</span>
+                        </motion.h1>
 
                         <motion.p 
                             initial={{ opacity: 0, y: 20 }}
@@ -79,9 +79,8 @@ export default function AboutUs() {
                             viewport={{ once: true }}
                             className="text-white/60 text-sm md:text-base leading-relaxed mb-10"
                         >
-                            Relux entered the business in 2009 & entered the EV platform in 2012, started the field right from scratch, eventually became Pioneers in the industry.
-
-                           </motion.p>
+                            From a single charger to large-scale charging networks, Relux designs, installs and supports EV charging infrastructure built for the way India travels.
+                        </motion.p>
 
                         {/* Tab Switcher - Balanced */}
                         <div className="flex items-center gap-10 mb-8 border-b border-white/5">

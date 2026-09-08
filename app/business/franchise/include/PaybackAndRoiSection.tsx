@@ -4,5 +4,9 @@ import React from "react";
 import ROICalculator from "@/components/ROICalculator/ROICalculator";
 
 export default function PaybackAndRoiSection() {
-  return <ROICalculator />;
+  return (
+    <div id="roi-section" className="scroll-mt-10">
+      <ROICalculator />
+    </div>
+  );
 }

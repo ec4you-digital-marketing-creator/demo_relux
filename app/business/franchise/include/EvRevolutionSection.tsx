@@ -1,21 +1,21 @@
 "use client";
 
 import React from "react";
-import { BarChart2, TrendingUp, Zap, Users, ChevronRight, BatteryCharging } from "lucide-react";
+import { BarChart2, TrendingUp, Zap, Users, ArrowUpRight, CheckCircle2 } from "lucide-react";
 
 /* ── Mini sparkline SVG ── */
 function Sparkline() {
   return (
-    <svg viewBox="0 0 160 60" className="w-36 h-12 text-[#00b14f]" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 160 60" className="w-32 h-10 text-[#00b14f]" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <linearGradient id="sparklineGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#00b14f" stopOpacity="0.25" />
+        <linearGradient id="sparklineGradLight" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#00b14f" stopOpacity="0.2" />
           <stop offset="100%" stopColor="#00b14f" stopOpacity="0.0" />
         </linearGradient>
       </defs>
       <path
         d="M 0,55 C 30,50 50,45 70,35 C 90,25 120,20 160,8 L 160,60 L 0,60 Z"
-        fill="url(#sparklineGrad)"
+        fill="url(#sparklineGradLight)"
       />
       <path
         d="M 0,55 C 30,50 50,45 70,35 C 90,25 120,20 160,8"
@@ -31,218 +31,162 @@ function Sparkline() {
   );
 }
 
-const bullets = [
-  {
-    icon: BatteryCharging,
-    bold: "7.66% EV penetration",
-    sub: "recorded in India in 2024",
-  },
-  {
-    icon: TrendingUp,
-    bold: "30% EV penetration",
-    sub: "targeted by 2030",
-  },
-  {
-    icon: Zap,
-    bold: "50% EV sales share",
-    sub: "projected in India by 2035",
-  },
-  {
-    icon: Users,
-    bold: "Growing EV adoption",
-    sub: "is increasing the need for charging infrastructure",
-  },
-];
-
-const statCards = [
+const stats = [
   {
     icon: BarChart2,
     value: "7.66%",
-    label: "EV Penetration in India",
-    tag: "Recorded in 2024",
+    title: "EV Penetration in India",
+    sub: "Recorded in 2024",
+
   },
   {
     icon: TrendingUp,
     value: "30%",
-    label: "EV Penetration Target",
-    tag: "By 2030",
+    title: "EV Penetration Target",
+    sub: "Targeted by 2030",
+
   },
   {
     icon: Zap,
     value: "50%",
-    label: "EV Sales Share",
-    tag: "Projected by 2035",
+    title: "EV Sales Share",
+    sub: "Projected in India by 2035",
+
   },
   {
     icon: Users,
-    value: null,
-    label: "Massive Opportunity",
-    tag: null,
-    desc: "Infrastructure. Innovation. Sustainable Future.",
+    value: "100%",
+    title: "Infrastructure Need",
+    sub: "Massive EV charging market expansion",
+
   },
 ];
 
 export default function EvRevolutionSection() {
   return (
     <section
-      className="relative w-full py-10 md:py-14 text-slate-900 font-sans border-b border-slate-200 overflow-hidden"
+      id="about-section"
+      className="relative w-full py-16 md:py-24 text-slate-900 font-sans border-b border-emerald-100/80 overflow-hidden scroll-mt-10"
       style={{
         backgroundImage: "url('/franchise/bg_franchise.jpg')",
         backgroundSize: "cover",
-        backgroundPosition: "bottom",
+        backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
     >
-      {/* White overlay to keep content readable */}
-      <div className="absolute inset-0 bg-white/25 pointer-events-none" />
+      {/* Light Glassmorphism Overlay */}
+      <div className="absolute inset-0 bg-white/70 backdrop-blur-xs pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 relative z-10">
 
-          {/* ── LEFT COLUMN ── */}
-          <div className="flex flex-col gap-8">
-
-            {/* Label */}
-            <div>
-              <span className="inline-flex items-center gap-1.5 text-[#00b14f] text-xs font-extrabold uppercase tracking-[0.2em] ">
-                {/* <Zap className="w-3 h-3 fill-[#00b14f]" /> */}
-                THE OPPORTUNITY
-              </span>
-            </div>
-
-            {/* Heading */}
-            <div>
-              <h2 className="text-4xl sm:text-5xl font-black text-slate-900 leading-tight tracking-tight">
-                India's EV Adoption<br />
-                <span className="text-[#00b14f]">Is Accelerating</span>
-              </h2>
-              {/* Underline bar */}
-              <div className="mt-3 w-14 h-1 rounded-full bg-slate-900" />
-            </div>
-
-            {/* Description */}
-            <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium max-w-md">
-              India's EV market is moving from early adoption toward mainstream mobility, increasing the need
-              for accessible charging infrastructure across cities, highways, and commercial locations.
-            </p>
-
-            {/* Bullet list */}
-            <div className="space-y-2.5">
-              {bullets.map((b, idx) => {
-                const Icon = b.icon;
-                return (
-                  <div
-                    key={idx}
-                    className="flex items-center gap-3 py-3 px-4 rounded-2xl bg-[#f9fafb] border border-slate-200 hover:border-[#00b14f]/40 hover:bg-[#00b14f]/5 transition-all duration-200 group cursor-default"
-                  >
-                    <div className="w-9 h-9 rounded-xl bg-[#00b14f]/10 text-[#00b14f] flex items-center justify-center shrink-0 group-hover:bg-[#00b14f] group-hover:text-white transition-colors duration-200">
-                      <Icon className="w-4 h-4" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <span className="font-extrabold text-slate-900 text-sm">{b.bold} </span>
-                      <span className="text-slate-500 text-sm font-medium">{b.sub}</span>
-                    </div>
-                    <ChevronRight className="w-4 h-4 text-slate-400 shrink-0 group-hover:text-[#00b14f] transition-colors duration-200" />
-                  </div>
-                );
-              })}
-            </div>
-
+        {/* Header Section */}
+        <div className="flex flex-col items-center text-center mb-12 md:mb-16">
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <span className="w-10 sm:w-14 h-[2px] bg-[#00b14f]" />
+            <span className="text-[#00b14f] text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em]">
+              THE OPPORTUNITY
+            </span>
+            <span className="w-10 sm:w-14 h-[2px] bg-[#00b14f]" />
           </div>
 
-          {/* ── RIGHT COLUMN ── */}
-          <div className="flex flex-col gap-5">
-
-            {/* 2x2 stat cards */}
-            <div className="grid grid-cols-2 gap-4">
-              {statCards.map((card, idx) => {
-                const Icon = card.icon;
-                return (
-                  <div
-                    key={idx}
-                    className="relative bg-white border border-slate-200/90 rounded-3xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between overflow-hidden min-h-48"
-                  >
-                    {/* Top: Circular Icon Badge */}
-                    <div className="w-12 h-12 rounded-full bg-[#00b14f]/10 text-[#00b14f] flex items-center justify-center mb-3 shrink-0">
-                      <Icon className="w-6 h-6" />
-                    </div>
-
-                    {/* Content */}
-                    <div className="relative z-10 space-y-1">
-                      {card.value ? (
-                        <>
-                          <div className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-none">
-                            {card.value}
-                          </div>
-                          <div className="text-slate-700 font-bold text-xs sm:text-sm pt-1">
-                            {card.label}
-                          </div>
-                          {card.tag && (
-                            <div className="pt-2">
-                              <span className="inline-block text-[11px] font-bold text-[#00b14f] bg-[#00b14f]/10 border border-[#00b14f]/25 px-3 py-1 rounded-full">
-                                {card.tag}
-                              </span>
-                            </div>
-                          )}
-                        </>
-                      ) : (
-                        <>
-                          <div className="text-lg sm:text-xl font-extrabold text-[#00b14f] leading-snug">
-                            {card.label}
-                          </div>
-                          <div className="text-slate-600 text-xs sm:text-sm font-medium leading-relaxed pt-1">
-                            {card.desc}
-                          </div>
-                        </>
-                      )}
-                    </div>
-
-                    {/* Bottom-right Sparkline */}
-                    <div className="absolute bottom-0 right-0 pointer-events-none opacity-80">
-                      <Sparkline />
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Dark banner — Why Now */}
-            <div className="relative bg-[#0c0c0c] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-              <div className="flex items-stretch">
-                {/* Text */}
-                <div className="flex-1 p-6 flex flex-col justify-between gap-4">
-                  <div className="inline-flex items-center gap-1.5">
-                    <Zap className="w-3.5 h-3.5 text-[#00b14f] fill-[#00b14f]" />
-                    <span className="text-[#00b14f] text-[10px] font-black uppercase tracking-[0.3em]">
-                      WHY NOW?
-                    </span>
-                  </div>
-                  <p className="text-white font-extrabold text-base md:text-lg leading-snug">
-                    Growing EV adoption is increasing the need for{" "}
-                    <span className="text-[#00b14f]">charging infrastructure</span> across India.
-                  </p>
-                  <div className="flex items-center gap-2">
-                    <div className="flex-1 h-px bg-white/10" />
-                    <span className="text-[#00b14f] font-black text-[10px] uppercase tracking-widest">
-                      Relux Electric
-                    </span>
-                    <div className="flex-1 h-px bg-white/10" />
-                  </div>
-                </div>
-                {/* Image thumb */}
-                <div className="hidden sm:block w-36 shrink-0 relative">
-                  <img
-                    src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=400&q=80"
-                    alt="EV Charger"
-                    className="absolute inset-0 w-full h-full object-cover opacity-50"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-r from-[#0c0c0c] to-transparent" />
-                </div>
-              </div>
-            </div>
-
-          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tight leading-tight max-w-4xl">
+            EV ADOPTION IS GROWING. CHARGING INFRASTRUCTURE HAS TO{" "}
+            <span className="text-[#00b14f]">GROW WITH IT.</span>
+          </h2>
         </div>
+
+        {/* 2 Column Main Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+
+          {/* ── LEFT COLUMN: Narrative Overview Card ── */}
+          <div className="lg:col-span-7 bg-white border border-emerald-100/90 rounded-3xl p-6 sm:p-10 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+
+            <div className="space-y-6">
+
+              {/* Card Accent Tag */}
+              {/* <div className="flex items-center gap-2 text-[#00b14f] font-extrabold text-xs uppercase tracking-wider">
+                <span className="w-2 h-2 rounded-full bg-[#00b14f] animate-pulse" />
+                Strategic Market Overview
+              </div> */}
+
+              {/* Main Paragraph */}
+              <p className="text-slate-700 text-sm sm:text-base md:text-lg font-medium leading-relaxed">
+                More electric cars, commercial vehicles and fleets on Indian roads mean more places to charge.
+                But setting up a charging station isn't simply a matter of buying a charger and plugging it in. The location, power availability, charger capacity, vehicle traffic, access, parking and ongoing operations all affect how a station performs.
+                That's where Relux comes in.
+                We help our partners evaluate the target location, select the charging setup appropriate for their needs, and establish the required infrastructure to get the station operational.
+                You bring the location and investment. Relux brings the charging infrastructure and operational support.
+
+              </p>
+
+              {/* Highlight Box: Relux Role */}
+              <div className="bg-[#f0fbf4] border-l-4 border-[#00b14f] p-5 sm:p-6 rounded-r-2xl">
+                <h3 className="font-extrabold text-slate-900 text-base sm:text-lg mb-1 flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-[#00b14f]" />
+                  That's where Relux comes in.
+                </h3>
+                <p className="text-slate-600 text-xs sm:text-sm md:text-base font-medium leading-relaxed">
+                  We help our partners evaluate the target location, select the charging setup appropriate for their needs, and establish the required infrastructure to get the station operational.
+                </p>
+              </div>
+
+              {/* Key Takeaway Banner */}
+              <div className="bg-slate-900 text-white rounded-2xl p-5 sm:p-6 flex items-center gap-4 sm:gap-5 shadow-md">
+                <div className="w-12 h-12 rounded-xl bg-[#00b14f] text-white flex items-center justify-center shrink-0 shadow-sm">
+                  <Zap className="w-6 h-6 fill-white" />
+                </div>
+                <p className="font-bold text-xs sm:text-sm md:text-base leading-snug">
+                  You bring the location and investment. <br className="hidden sm:block" />
+                  <span className="text-[#00b14f]">Relux brings the charging infrastructure and operational support.</span>
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* ── RIGHT COLUMN: 4 Market Stats Cards ── */}
+          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 items-stretch">
+            {stats.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white border border-emerald-100/90 rounded-3xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:border-[#00b14f]/50 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group"
+                >
+                  <div>
+                    {/* Top Row: Icon + Badge */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-12 h-12 rounded-2xl bg-[#00b14f]/10 text-[#00b14f] group-hover:bg-[#00b14f] group-hover:text-white transition-colors duration-300 flex items-center justify-center shrink-0">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                    </div>
+                    {/* Stat Value */}
+                    <div className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-none mb-2">
+                      {item.value}
+                    </div>
+
+                    {/* Title & Subtitle */}
+                    <h3 className="font-extrabold text-slate-900 text-sm sm:text-base mb-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-slate-500 text-xs font-medium leading-relaxed">
+                      {item.sub}
+                    </p>
+                  </div>
+
+                  {/* Bottom Graphic Sparkline */}
+                  <div className="pt-4 flex items-center justify-between">
+                    <Sparkline />
+                    <ArrowUpRight className="w-5 h-5 text-slate-400 group-hover:text-[#00b14f] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+        </div>
+
       </div>
     </section>
   );

@@ -3,11 +3,16 @@ import { SITE_URL } from "@/app/ui/baceurl";
 import HeroSection from "./include/HeroSection";
 import EvRevolutionSection from "./include/EvRevolutionSection";
 import ValuePropsSection from "./include/ValuePropsSection";
+import HowItWorksSection from "./include/HowItWorksSection";
 import FranchiseModels from "./include/franchisemodel";
+import WhatAreYouInvestingIn from "./include/WhatAreYouInvestingIn";
 import ChargingTimesSection from "./include/ChargingTimesSection";
 import PaybackAndRoiSection from "./include/PaybackAndRoiSection";
 import RequirementsSection from "./include/RequirementsSection";
 import FranchiseFaqSection from "./include/FranchiseFaqSection";
+import WhyPartnerSection from "./include/WhyPartnerSection";
+import TechnologySection from "./include/TechnologySection";
+import SuitablePartnerSection from "./include/SuitablePartnerSection";
 import { FAQS_DATA } from "./include/faqData";
 
 export const metadata: Metadata = {
@@ -60,28 +65,40 @@ export default function FranchisePage() {
       <HeroSection />
       {/* 4. Franchise Models (5 Cards Grid with Popup EnquiryModal) */}
       <FranchiseModels />
+      {/* What Are You Investing In Section */}
+      <WhatAreYouInvestingIn />
+      {/* How It Works Section */}
+      <HowItWorksSection />
+      {/* Why Partner With RELUX? */}
+      <WhyPartnerSection />
       {/* 7. Franchise Requirements */}
       <RequirementsSection />
-      {/* 6. Your Money Back in 3-4 Years & Calculate Your Returns */}
-      <PaybackAndRoiSection />
+      {/* 7b. Suitable Partner Profiles */}
+      <SuitablePartnerSection />
+
 
 
       {/* 2. India's EV Revolution Section */}
-      <EvRevolutionSection />
+      {/* <EvRevolutionSection /> */}
+
+
+
+      {/* Technology Section */}
+      <TechnologySection />
 
       {/* 3. What Relux Brings For You (Value Proposition) */}
-      <ValuePropsSection />
-
-
+      {/* <ValuePropsSection /> */}
 
       {/* 5. Approximate Charging Times & Why EV Charging Business */}
-      <ChargingTimesSection />
+      {/* <ChargingTimesSection /> */}
 
-      
+      {/* 6. Your Money Back in 3-4 Years & Calculate Your Returns */}
+      <PaybackAndRoiSection />
     
 
       {/* 8. AEO / GEO FAQ & Direct Answers */}
-      <FranchiseFaqSection />
+      {/* <FranchiseFaqSection /> */}
+
     </main>
   );
 }

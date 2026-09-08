@@ -15,6 +15,8 @@ export default function HomeHero() {
         alt="Relux Electric Tamil Nadu Banner"
         fill
         priority
+        fetchPriority="high"
+        sizes="100vw"
         className="hero-bg absolute inset-0 w-full h-full object-cover opacity-80"
         style={{
           objectPosition: 'var(--hero-bg-pos)',
@@ -36,7 +38,7 @@ export default function HomeHero() {
 
             <div className="relative z-10 p-5 md:p-6">
               <h1 className="text-white text-[17px] md:text-[19px] lg:text-[21px] font-bold leading-snug mb-2.5 tracking-wide drop-shadow">
-                India&apos;s Most Trusted EV Charging Sation Network
+                India&apos;s Most Trusted EV Charging Station Network
               </h1>
               <p className="text-white/65 text-[12px] md:text-[13px] leading-relaxed mb-5">
                 Relux Electric is building a reliable EV Charging Station network across India helping drivers, businesses, and fleet operators charge with confidence in cities, on highways, and everywhere in between.

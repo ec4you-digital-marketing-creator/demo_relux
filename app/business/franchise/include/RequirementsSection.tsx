@@ -4,75 +4,59 @@ import React, { useState } from "react";
 import {
   Wallet,
   Building2,
-  MapPin,
+  Car,
   Maximize2,
   Zap,
-  Clock,
-  Coffee,
   FileCheck,
-  Compass,
-  Cpu,
   ShieldCheck,
   Award,
   CreditCard,
   TrendingUp,
   PlugZap,
   Receipt,
-  CheckCircle2,
-  FileText,
+  Compass,
+  Cpu,
 } from "lucide-react";
 
 export default function RequirementsSection() {
   const [activeTab, setActiveTab] = useState<"requirements" | "terms">("requirements");
 
-  const requirements = [
+  const siteChecklist = [
     {
       icon: Wallet,
       num: "01",
       title: "Suitable Investment Capacity",
-      desc: "Investment capability based on the selected charging station model.",
+      desc: "Capital appropriate to the selected charging model.",
     },
     {
       icon: Building2,
       num: "02",
       title: "Available Land or Commercial Space",
-      desc: "Owned or legally leased space suitable for the proposed charging setup.",
+      desc: "Owned or legally leased property suitable for the setup.",
     },
     {
-      icon: MapPin,
+      icon: Car,
       num: "03",
-      title: "Accessible Location",
-      desc: "A location with convenient vehicle access and good potential for EV charging demand.",
+      title: "Vehicle & Extended Accessibility",
+      desc: "Customers should be able to enter, charge and exit conveniently, throughout the day",
     },
     {
       icon: Maximize2,
       num: "04",
-      title: "Adequate Space for Operations",
-      desc: "Sufficient area for charging equipment, vehicle movement, and parking requirements.",
+      title: "Adequate Space",
+      desc: "Room for chargers, parking and vehicle movement.",
     },
     {
       icon: Zap,
       num: "05",
-      title: "Power Connection Feasibility",
-      desc: "Suitable electricity connection availability or feasibility at the proposed site.",
-    },
-    {
-      icon: Clock,
-      num: "06",
-      title: "24×7 Site Accessibility",
-      desc: "The location should allow customers to access the charging facility throughout the day and night.",
-    },
-    {
-      icon: Coffee,
-      num: "07",
-      title: "Basic Customer Facilities",
-      desc: "Adequate arrangements for customer convenience during the charging session.",
+      title: "Power Feasibility",
+      desc: "A suitable electricity connection or feasibility for obtaining one.",
     },
     {
       icon: FileCheck,
-      num: "08",
+      num: "06",
       title: "Valid Property Documents",
-      desc: "Required ownership or lease documents for site verification and franchise onboarding.",
+      desc: "Ownership or lease documentation for site verification.",
     },
   ];
 
@@ -128,115 +112,141 @@ export default function RequirementsSection() {
   ];
 
   return (
-    <section className="relative w-full py-8 md:py-8 text-white font-sans border-b border-black/20 overflow-hidden">
+    <section className="relative w-full py-16 md:py-24 bg-gradient-to-b from-[#f4faf6] via-white to-[#edf8f1] text-slate-900 font-sans border-b border-emerald-100/80 overflow-hidden">
+      {/* Subtle Background Grid Pattern */}
+      <div className="absolute inset-0 bg-[radial-gradient(#00b14f_1px,transparent_1px)] [background-size:32px_32px] opacity-10 pointer-events-none" />
 
-      {/* Background Image: Left-aligned full section cover */}
-      <img
-        src="/franchise/req.jpg"
-        alt="EV Charging Franchise Background"
-        className="absolute inset-0 w-full h-full object-cover object-left pointer-events-none"
-      />
-
-      {/* Light overlay — image stays clearly visible */}
-      <div className="absolute inset-0 bg-black/65" />
-
-      {/* Subtle green bottom-tint glow */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-linear-to-t from-[#00b14f]/20 to-transparent pointer-events-none" />
-
-      <div className="w-full px-[5%] relative z-10">
-        
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 relative z-10">
         {/* Header Section */}
-        <div className="flex flex-col items-center text-center mb-12 max-w-4xl mx-auto space-y-4">
-          
-          {/* Top Pill Badge */}
-          <span className="inline-flex items-center gap-1.5 text-[#00b14f] text-xs font-black uppercase tracking-[0.25em]">
-            
-            FRANCHISE REQUIREMENTS & TERMS
-          </span>
+        <div className="flex flex-col items-center text-center mb-12 md:mb-16">
+          {/* Category Tag */}
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <span className="w-10 sm:w-14 h-[2px] bg-[#00b14f]" />
+            <span className="text-[#00b14f] text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em]">
+              DOES YOUR LOCATION QUALIFY?
+            </span>
+            <span className="w-10 sm:w-14 h-[2px] bg-[#00b14f]" />
+          </div>
 
-          {/* Main Heading */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white uppercase tracking-tight leading-tight drop-shadow-lg">
-            WHAT YOU NEED TO <span className="text-[#00b14f]">START YOUR EV FRANCHISE</span>
+          {/* Main Title */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tight leading-tight max-w-4xl">
+            WHAT MAKES A SITE IDEAL FOR A{" "}
+            <span className="text-[#00b14f]">CHARGING STATION?</span>
           </h2>
 
           {/* Subtitle */}
-          <p className="text-white/90 text-sm md:text-base leading-relaxed font-semibold max-w-2xl drop-shadow">
-            A suitable site, required infrastructure, and the ability to operate the charging facility are the basic requirements to get started.
+          <p className="mt-3 text-slate-600 text-sm sm:text-base md:text-lg font-medium max-w-2xl">
+            A good charging station starts with a good site. It should have:
           </p>
 
-          {/* Interactive Tab Toggle Buttons */}
-          <div className="flex justify-center pt-4">
-            <div className="bg-black/50 backdrop-blur-md border border-white/20 p-1.5 rounded-full shadow-lg flex items-center gap-1">
-              <button
-                onClick={() => setActiveTab("requirements")}
-                type="button"
-                className={`px-6 py-3 rounded-full text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-300 cursor-pointer ${
-                  activeTab === "requirements"
-                    ? "bg-[#00b14f] text-white shadow-md"
-                    : "text-white/70 hover:text-white hover:bg-white/10"
-                }`}
-              >
-                <span className="flex items-center gap-2">
-          
-                  <span>Site Requirements</span>
-                </span>
-              </button>
-
-              <button
-                onClick={() => setActiveTab("terms")}
-                type="button"
-                className={`px-6 py-3 rounded-full text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-300 cursor-pointer ${
-                  activeTab === "terms"
-                    ? "bg-[#00b14f] text-white shadow-md"
-                    : "text-white/70 hover:text-white hover:bg-white/10"
-                }`}
-              >
-                <span className="flex items-center gap-2">
-                 
-                  <span>Franchise Terms & Guidelines</span>
-                </span>
-              </button>
-            </div>
+          {/* Tab Switcher Buttons */}
+          <div className="flex items-center gap-2 mt-6 bg-slate-200/70 p-1.5 rounded-full border border-slate-300/60 shadow-inner">
+            <button
+              onClick={() => setActiveTab("requirements")}
+              type="button"
+              className={`px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                activeTab === "requirements"
+                  ? "bg-[#00b14f] text-white shadow-md"
+                  : "text-slate-700 hover:text-slate-900 hover:bg-white/50"
+              }`}
+            >
+              Site Requirements
+            </button>
+            <button
+              onClick={() => setActiveTab("terms")}
+              type="button"
+              className={`px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                activeTab === "terms"
+                  ? "bg-[#00b14f] text-white shadow-md"
+                  : "text-slate-700 hover:text-slate-900 hover:bg-white/50"
+              }`}
+            >
+              Franchise Terms & Guidelines
+            </button>
           </div>
-
         </div>
 
-        {/* 8 Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-          {(activeTab === "requirements" ? requirements : terms).map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={idx}
-                className="bg-black/30 backdrop-blur-sm border border-white/20 rounded-3xl p-6 shadow-md hover:shadow-2xl hover:-translate-y-1 hover:border-[#00b14f]/70 hover:bg-black/50 transition-all duration-300 flex flex-col justify-between group"
-              >
-                <div>
-                  {/* Top Row: Icon + Number */}
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="w-12 h-12 rounded-2xl bg-[#00b14f]/25 text-[#00b14f] flex items-center justify-center shrink-0 group-hover:bg-[#00b14f] group-hover:text-white transition-colors duration-300">
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <span className="text-white/40 group-hover:text-[#00b14f] font-black text-sm tracking-widest transition-colors">
-                      {item.num}
+        {/* Tab Content: Requirements Grid (6 Cards, 3 Cols on desktop) */}
+        {activeTab === "requirements" ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+            {siteChecklist.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white border border-emerald-100/90 rounded-3xl p-6 sm:p-8 shadow-md hover:shadow-2xl hover:-translate-y-1 hover:border-[#00b14f]/50 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
+                >
+                  {/* Subtle corner highlight */}
+                  <div className="absolute top-0 right-0 w-28 h-28 bg-gradient-to-bl from-emerald-100/40 to-transparent rounded-bl-full pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity" />
+
+                  <div>
+                    <div className="flex items-center justify-between mb-5 relative z-10">
+                      <div className="w-12 h-12 rounded-2xl bg-[#00b14f]/10 text-[#00b14f] group-hover:bg-[#00b14f] group-hover:text-white transition-colors duration-300 flex items-center justify-center shrink-0 shadow-xs">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <span className="text-[11px] font-extrabold text-[#00b14f] tracking-wide uppercase flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#00b14f] inline-block animate-pulse" />
+                      Site Qualifier
                     </span>
+                    </div>
+
+                    <h3 className="text-base sm:text-lg font-extrabold text-slate-900 mb-2.5 group-hover:text-[#00b14f] transition-colors leading-snug relative z-10">
+                      {item.title}
+                    </h3>
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-medium relative z-10">
+                      {item.desc}
+                    </p>
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-base font-black text-white tracking-tight leading-snug mb-2 group-hover:text-[#00b14f] transition-colors drop-shadow">
-                    {item.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-white/75 text-xs sm:text-sm leading-relaxed font-medium">
-                    {item.desc}
-                  </p>
+                  {/* Bottom indicator check badge */}
+                  {/* <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between relative z-10">
+                    <span className="text-[11px] font-extrabold text-[#00b14f] tracking-wide uppercase flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#00b14f] inline-block animate-pulse" />
+                      Site Qualifier
+                    </span>
+                    <div className="w-7 h-7 rounded-full bg-emerald-50 text-[#00b14f] border border-emerald-200/60 flex items-center justify-center group-hover:bg-[#00b14f] group-hover:text-white group-hover:border-[#00b14f] transition-all">
+                      <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </div>
+                  </div> */}
                 </div>
-              </div>
-            );
-          })}
-        </div>
-
+              );
+            })}
+          </div>
+        ) : (
+          /* Terms Grid - 8 Cards */
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-stretch">
+            {terms.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white border border-emerald-100/90 rounded-3xl p-6 sm:p-8 shadow-md hover:shadow-2xl hover:-translate-y-1 hover:border-[#00b14f]/50 transition-all duration-300 flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-5">
+                      <div className="w-12 h-12 rounded-2xl bg-[#00b14f]/10 text-[#00b14f] group-hover:bg-[#00b14f] group-hover:text-white transition-colors duration-300 flex items-center justify-center shrink-0">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <span className="text-[#00b14f] font-black text-sm sm:text-base tracking-wider">
+                        {item.num}
+                      </span>
+                    </div>
+                    <h3 className="text-base sm:text-lg font-extrabold text-slate-900 mb-2.5 group-hover:text-[#00b14f] transition-colors leading-snug">
+                      {item.title}
+                    </h3>
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-medium">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     </section>
   );
 }
+

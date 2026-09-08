@@ -139,12 +139,14 @@ export default function HomeUpdates() {
           <div className="hidden md:flex items-center gap-3">
             <button
               onClick={prevSlide}
+              aria-label="Previous slide"
               className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-white/30 transition-all active:scale-95"
             >
               <FiChevronLeft size={20} />
             </button>
             <button
               onClick={nextSlide}
+              aria-label="Next slide"
               className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-white/30 transition-all active:scale-95"
             >
               <FiChevronRight size={20} />
@@ -212,12 +214,14 @@ export default function HomeUpdates() {
         <div className="flex md:hidden items-center justify-center gap-4 mt-10">
           <button
             onClick={prevSlide}
+            aria-label="Previous slide"
             className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-white/30 transition-all active:scale-95"
           >
             <FiChevronLeft size={24} />
           </button>
           <button
             onClick={nextSlide}
+            aria-label="Next slide"
             className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-white/30 transition-all active:scale-95"
           >
             <FiChevronRight size={24} />

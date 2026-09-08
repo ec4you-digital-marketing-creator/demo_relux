@@ -79,6 +79,11 @@ export default function ValuePropsSection() {
       title: "Brand Visibility & Network Reach",
       desc: "Build your charging business under the Relux brand while becoming part of a growing EV charging network.",
     },
+    {
+      icon: Network,
+      title: "Unified Bharat e-Charge (UBC) Ready",
+      desc: "Interoperable with India's open EV protocol (MHI, BHEL, NPCI), allowing drivers from BHIM and any UBC app to discover & book your station.",
+    },
   ];
 
   return (

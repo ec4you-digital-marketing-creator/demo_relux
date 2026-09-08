@@ -114,6 +114,7 @@ export default function ProductInquiryModal({
         {/* Close Button */}
         <button
           onClick={handleResetAndClose}
+          aria-label="Close modal"
           className="absolute top-5 right-5 p-2 rounded-full bg-white/10 hover:bg-white/20 text-zinc-300 hover:text-white transition-colors cursor-pointer"
         >
           <X className="w-5 h-5" />
@@ -186,8 +187,14 @@ export default function ProductInquiryModal({
               </div>
             )}
 
-            {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-4 text-xs">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-4 text-xs"
+              {...({
+                "tool-name": "submit_product_inquiry",
+                "tool-description": "Submit a Product & EV Charger Hardware Inquiry to Relux Electric"
+              } as any)}
+            >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {/* Full Name */}
                 <div>

@@ -148,7 +148,7 @@ const ZeroModal = ({ isOpen, onClose }: ZeroModalProps) => {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-[100] flex items-center justify-center px-4 md:px-6">
+      <div className="fixed inset-0 z-100 flex items-center justify-center px-4 md:px-6">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -168,25 +168,26 @@ const ZeroModal = ({ isOpen, onClose }: ZeroModalProps) => {
           {/* Close Button */}
           <button
             onClick={onClose}
+            aria-label="Close modal"
             className="absolute top-4 right-4 md:top-5 md:right-5 z-50 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-[#ea3323] transition-colors"
           >
             <FiX className="w-4 h-4 md:w-5 md:h-5" />
           </button>
 
           {/* Left Panel: Information Section - Hidden on Mobile */}
-          <div className="hidden md:flex md:w-[38%] p-8 md:p-10 bg-gradient-to-br from-[#0a1a10] to-[#080808] flex-col justify-center relative overflow-hidden border-r border-white/5">
+          <div className="hidden md:flex md:w-[38%] p-8 md:p-10 bg-linear-to-br from-[#0a1a10] to-[#080808] flex-col justify-center relative overflow-hidden border-r border-white/5">
             <div className="absolute top-0 left-0 w-full h-full bg-[#00b14f]/5 blur-[60px] rounded-full pointer-events-none" />
             
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8">
-                <span className="w-8 h-[1px] bg-[#00b14f]" />
+                <span className="w-8 h-px bg-[#00b14f]" />
                 <span className="text-[#00b14f] text-[10px] font-black uppercase tracking-[0.4em]">Inquiry</span>
               </div>
               <h2 className="text-3xl md:text-5xl font-black text-white leading-[0.95] tracking-tighter uppercase mb-6">
                 LOCATION <br />
                 <span className="text-[#00b14f]">PARTNER.</span>
               </h2>
-              <p className="text-white/40 text-[11px] md:text-xs leading-relaxed mb-10 max-w-[240px]">
+              <p className="text-white/40 text-[11px] md:text-xs leading-relaxed mb-10 max-w-60">
                 The EV industry is expanding at an unprecedented rate. Secure your position as a location partner.
               </p>
 
@@ -215,7 +216,7 @@ const ZeroModal = ({ isOpen, onClose }: ZeroModalProps) => {
             {/* Mobile Header */}
             <div className="md:hidden pr-8 mb-8">
                 <div className="flex items-center gap-2 mb-2">
-                    <span className="w-6 h-[1px] bg-[#00b14f]" />
+                    <span className="w-6 h-px bg-[#00b14f]" />
                     <span className="text-[#00b14f] text-[8px] font-black uppercase tracking-[0.3em]">Partner Inquiry</span>
                 </div>
                 <h2 className="text-2xl font-black text-white leading-tight uppercase tracking-tighter">
@@ -239,7 +240,14 @@ const ZeroModal = ({ isOpen, onClose }: ZeroModalProps) => {
               </motion.div>
 
             ) : (
-              <form className="space-y-4" onSubmit={handleSubmit}>
+              <form
+                className="space-y-4"
+                onSubmit={handleSubmit}
+                {...({
+                  "tool-name": "submit_zero_investment_modal",
+                  "tool-description": "Submit a quick Zero Investment EV Charger Host Application"
+                } as any)}
+              >
                 {error && (
                   <div className="bg-red-500/10 border border-red-500/20 text-red-500 text-[9px] font-bold uppercase tracking-wider p-3 rounded-xl text-center">
                     {error}

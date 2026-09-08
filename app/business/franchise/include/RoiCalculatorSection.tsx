@@ -59,13 +59,15 @@ export default function RoiCalculatorSection({ onOpenEnquiry }: RoiCalculatorSec
           <div className="flex items-center gap-3 mb-3">
             <span className="w-8 h-0.5 bg-[#00b14f]" />
             <span className="text-[#00b14f] text-xs font-black uppercase tracking-[0.3em]">
-              Interactive Estimator
+              Interactive ROI
+
+
             </span>
             <span className="w-8 h-0.5 bg-[#00b14f]" />
           </div>
 
           <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white uppercase leading-tight">
-            CALCULATE YOUR <span className="text-[#00b14f]">RETURNS</span>
+            Calculate Your Franchise  <span className="text-[#00b14f]">Returns</span>
           </h2>
           <p className="text-white/50 text-xs md:text-sm leading-relaxed mt-3">
             Adjust the sliders below to estimate your potential revenue and payback timeline.

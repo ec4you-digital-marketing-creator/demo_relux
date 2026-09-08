@@ -72,8 +72,8 @@ export default function About() {
       />
       <AboutUs />
       <WhyChooseUs />
-      <WhyTxt />
       <AboutDeep />
+      <WhyTxt />
     </main>
   );
 }
