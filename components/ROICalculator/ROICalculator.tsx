@@ -64,12 +64,12 @@ export default function ROICalculator() {
   ];
 
   // Chart SVG Coordinates Math (Matching screenshot layout)
-  const chartHeight = 240;
-  const chartWidth = 340;
-  const paddingLeft = 45;
-  const paddingRight = 15;
+  const chartHeight = 245;
+  const chartWidth = 350;
+  const paddingLeft = 58;
+  const paddingRight = 18;
   const paddingTop = 45;
-  const paddingBottom = 35;
+  const paddingBottom = 40;
 
   const usableWidth = chartWidth - paddingLeft - paddingRight;
   const usableHeight = chartHeight - paddingTop - paddingBottom;
@@ -179,10 +179,10 @@ export default function ROICalculator() {
         {/* ============================================================ */}
         {/* 2. MAIN 2-COLUMN DASHBOARD */}
         {/* ============================================================ */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
 
           {/* LEFT COLUMN: INVESTMENT SETUP CARD (5 COLS) */}
-          <div className="lg:col-span-5 bg-white border border-zinc-200 rounded-3xl p-6 md:p-7 space-y-6 shadow-sm">
+          <div className="lg:col-span-5 bg-white border border-zinc-200 rounded-3xl p-6 md:p-7 space-y-6 shadow-sm flex flex-col">
             {/* Title Header */}
             <div className="flex items-center gap-3">
               <span className="p-2.5 bg-emerald-100 rounded-xl text-[#00873d]">
@@ -203,7 +203,7 @@ export default function ROICalculator() {
               <span className="text-xs font-bold text-zinc-700 block">
                 Charger Type
               </span>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                 {CHARGER_PLANS.map((plan) => {
                   const isSelected = selectedPlan.id === plan.id;
                   return (
@@ -362,7 +362,7 @@ export default function ROICalculator() {
           </div>
 
           {/* RIGHT COLUMN: 5-YEAR ROI PROJECTION CARD (7 COLS) */}
-          <div className="lg:col-span-7 bg-white border border-zinc-200 rounded-3xl p-6 md:p-7 space-y-6 shadow-sm">
+          <div className="lg:col-span-7 bg-white border border-zinc-200 rounded-3xl p-6 md:p-7 space-y-6 shadow-sm flex flex-col justify-between">
             {/* Header & Payback Badge */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-100 pb-4">
               <div className="flex items-center gap-3">
@@ -386,7 +386,7 @@ export default function ROICalculator() {
             </div>
 
             {/* CHART & YEAR-WISE DETAILS MATRIX */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center flex-1 my-auto">
               
               {/* SVG CHART (8 Cols) */}
               <div className="md:col-span-8 overflow-x-auto select-none pt-2">
@@ -424,7 +424,7 @@ export default function ROICalculator() {
                           strokeWidth="1"
                         />
                         <text
-                          x={paddingLeft - 6}
+                          x={paddingLeft - 8}
                           y={yPos + 3}
                           fill="#a1a1aa"
                           fontSize="9"

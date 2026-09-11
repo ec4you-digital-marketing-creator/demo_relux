@@ -12,17 +12,6 @@ export interface ChargerPlan {
 
 export const CHARGER_PLANS: ChargerPlan[] = [
   {
-    id: "30kw",
-    name: "30 kW",
-    capacityRange: "30 kW Single Gun Fast Charger",
-    investmentDisplay: "₹22 Lakhs",
-    investmentAmount: 2200000,
-    investmentRange: "₹20 – ₹24 Lakhs",
-    franchiseeSharePercent: 0.85,
-    gunMultiplier: 1.0,
-    defaultSpaceSqFt: 200,
-  },
-  {
     id: "60kw",
     name: "60 kW",
     capacityRange: "60 kW Dual Gun Fast Charger",
