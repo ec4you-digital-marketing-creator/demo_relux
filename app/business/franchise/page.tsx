@@ -66,6 +66,7 @@ export default function FranchisePage() {
       <HeroSection />
       {/* 4. Franchise Models (5 Cards Grid with Popup EnquiryModal) */}
       <FranchiseModels />
+      <PaybackAndRoiSection />
       {/* What Are You Investing In Section */}
       <WhatAreYouInvestingIn />
       {/* Franchise Terms & Guidelines */}
@@ -96,7 +97,7 @@ export default function FranchisePage() {
       {/* <ChargingTimesSection /> */}
 
       {/* 6. Your Money Back in 3-4 Years & Calculate Your Returns */}
-      <PaybackAndRoiSection />
+      
     
 
       {/* 8. AEO / GEO FAQ & Direct Answers */}

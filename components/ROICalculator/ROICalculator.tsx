@@ -389,14 +389,14 @@ export default function ROICalculator() {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center flex-1 my-auto">
               
               {/* SVG CHART (8 Cols) */}
-              <div className="md:col-span-8 overflow-x-auto select-none pt-2">
+              <div className="md:col-span-8 overflow-x-auto select-none">
                 <svg
                   viewBox={`0 0 ${chartWidth} ${chartHeight}`}
                   className="w-full h-56 sm:h-64 min-w-70"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <defs>
+                  <defs >
                     {/* Emerald Bar Gradient */}
                     <linearGradient id="lightEmeraldBar" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="0%" stopColor="#00b14f" />
@@ -449,7 +449,7 @@ export default function ROICalculator() {
                   {chartPoints.map((pt) => {
                     const barTopY = mapY(pt.value);
                     const height = Math.max(8, mapY(0) - barTopY);
-                    const bw = 24;
+                    const bw = 18;
                     const barX = mapX(pt.yearNum) - bw / 2;
                     const isYear0 = pt.yearNum === 0;
 
