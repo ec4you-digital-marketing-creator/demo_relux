@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import AboutUs from "./include/aboutus";
+
 import WhyChooseUs from "./include/whychoose";
 import WhyTxt from "./include/whytxt";
 import AboutDeep from "./include/about-deep";
@@ -71,8 +72,10 @@ export default function About() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
       />
       <AboutUs />
+      
       <WhyChooseUs />
       <AboutDeep />
+      
       <WhyTxt />
     </main>
   );

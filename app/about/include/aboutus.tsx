@@ -11,7 +11,7 @@ export default function AboutUs() {
     const [tabs, setTabs] = useState([
         { id: "Vision", label: "Vision", content: "To accelerate India’s transition towards sustainable mobility by providing accessible and reliable EV charging infrastructure." },
         { id: "Mission", label: "Mission", content: "Deliver clean, efficient, and smart charging solutions that empower individuals and businesses to adopt electric vehicles with confidence." },
-        { id: "Values", label: "Values", content: "Innovation, Sustainability, and Reliability are the core pillars of everything we build at Reluxelctric." },
+        { id: "Values", label: "Values", content: "Innovation, Sustainability, and Reliability are the core pillars of everything we build at Relux Electric." },
     ]);
 
     useEffect(() => {

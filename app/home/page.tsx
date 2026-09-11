@@ -16,6 +16,7 @@ const SimpleABC = dynamic(() => import("./include/simple-abc"));
 const HomeCTABanner = dynamic(() => import("./include/cta-banner"));
 const HomePartners = dynamic(() => import("./include/partners"));
 const HomeBusiness = dynamic(() => import("./include/business"));
+const HomeCaaS = dynamic(() => import("./include/caas"));
 const HomeUpdates = dynamic(() => import("./include/updates"));
 const HomeAppFeature = dynamic(() => import("./include/app-feature"));
 const HomeContactCTA = dynamic(() => import("./include/contact-cta"));
@@ -29,6 +30,9 @@ export default function Home() {
       <LazySection placeholderHeight="100px">
         <HomeNewsMarquee />
       </LazySection>
+      <LazySection placeholderHeight="400px">
+        <HomeCaaS />
+      </LazySection>
       <LazySection placeholderHeight="500px">
         <HomeAbout />
       </LazySection>
@@ -41,6 +45,7 @@ export default function Home() {
       <LazySection placeholderHeight="400px">
         <HomeBusiness />
       </LazySection>
+
       <LazySection placeholderHeight="400px">
         <HomeUpdates />
       </LazySection>
@@ -50,9 +55,9 @@ export default function Home() {
       <LazySection placeholderHeight="400px">
         <HomeAppFeature />
       </LazySection>
-      <LazySection placeholderHeight="400px">
+      {/* <LazySection placeholderHeight="400px">
         <WhyChooseRelux />
-      </LazySection>
+      </LazySection> */}
       <LazySection placeholderHeight="300px">
         <HomeContactCTA />
       </LazySection>

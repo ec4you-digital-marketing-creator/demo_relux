@@ -42,7 +42,7 @@ export default function WhatAreYouInvestingIn() {
           <div className="flex items-center gap-3">
             <span className="w-8 h-[2px] bg-[#00b14f]" />
             <span className="text-[#00b14f] text-xs font-black uppercase tracking-[0.3em]">
-              WHAT ARE YOU INVESTING IN?
+              What are you investing in? 
             </span>
           </div>
 
@@ -51,22 +51,23 @@ export default function WhatAreYouInvestingIn() {
           </h2>
 
           <p className="mt-2 text-white/70 text-sm md:text-base font-medium leading-relaxed max-w-3xl">
-            An EV charging station is more than the hardware sitting beside a parking bay. Your investment goes into building the infrastructure required to operate a functional charging site.
+            By choosing Relux, you are supporting the transition towards cleaner transportation while contributing to a growing EV ecosystem across India. Reliable and accessible charging infrastructure makes electric mobility more practical, helping reduce dependence on fossil fuels and our country’s carbon footprint.
+            It is an investment in more than infrastructure—it is an investment in cleaner air, healthier communities and a more sustainable future.
           </p>
         </div>
 
         {/* 6 Investment Components Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           {investmentItems.map((item, idx) => (
             <div
               key={idx}
               className="relative overflow-hidden bg-gradient-to-b from-white/[0.05] to-white/[0.02] border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col justify-between hover:bg-white/[0.08] hover:border-[#00b14f]/50 transition-all duration-300 group shadow-lg hover:shadow-[#00b14f]/10"
-            >
+            > */}
               {/* Top hover border glow */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00b14f] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00b14f] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" /> */}
 
               {/* Ambient background glow */}
-              <div className="absolute -bottom-10 -right-10 w-36 h-36 bg-[#00b14f]/5 rounded-full blur-2xl group-hover:bg-[#00b14f]/15 transition-all duration-500 pointer-events-none" />
+              {/* <div className="absolute -bottom-10 -right-10 w-36 h-36 bg-[#00b14f]/5 rounded-full blur-2xl group-hover:bg-[#00b14f]/15 transition-all duration-500 pointer-events-none" />
 
               <div className="relative z-10 space-y-4">
                 <div className="flex items-center justify-between">
@@ -85,14 +86,9 @@ export default function WhatAreYouInvestingIn() {
               </div>
             </div>
           ))}
+        </div> */}
+
         </div>
-
-        {/* Footer Note */}
-        <p className="mt-10 text-center text-white/50 text-xs md:text-sm font-medium italic">
-          Your final scope depends on the selected model and site.
-        </p>
-
-      </div>
     </section>
   );
 }

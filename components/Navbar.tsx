@@ -41,8 +41,6 @@ export default function Navbar() {
       subMenu: [
         { name: 'Franchise', href: '/business/franchise', desc: 'Join our growing network', icon: Briefcase },
         { name: 'Zero Investment', href: '/business/zero-investment', desc: 'Start with zero capital', icon: Rocket },
-        { name: 'Service', href: '/business/service', desc: 'End-to-end EV solutions', icon: Settings },
-        { name: 'Products', href: '/business/products', desc: 'DC Fast Charger lineup', icon: Zap },
       ]
     },
     {
@@ -113,10 +111,10 @@ export default function Navbar() {
                     {/* Mega Dropdown Menu (Zeon-style structure adapted for current theme) */}
                     {link.subMenu && (
                       <div className="absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-4 group-hover:translate-y-0 scale-95 group-hover:scale-100 transition-all duration-300 ease-out z-70">
-                        <div className="w-112.5 bg-[#151515] border border-white/10 rounded-2xl shadow-[0_30px_60px_rgba(0,0,0,0.8)] flex relative overflow-hidden">
+                        <div className="w-52 bg-[#151515] border border-white/10 rounded-2xl shadow-[0_30px_60px_rgba(0,0,0,0.8)] flex relative overflow-hidden flex-col justify-start items-start p-4 hover:translate-x-2 transition-all duration-300 ease-out space-y-3">
                           
                           {/* Left: Simple Menu Links */}
-                          <div className="w-[55%] p-6 flex flex-col space-y-4 z-10">
+                        
                             {link.subMenu.map((subItem) => {
                               const isSubActive = activePath === subItem.href || pathname === subItem.href;
                               return (
@@ -133,35 +131,7 @@ export default function Navbar() {
                                 </Link>
                               );
                             })}
-                          </div>
-
-                          {/* Right: Featured Panel with Curve */}
-                          <div className="w-[45%] relative bg-[#202020] p-5 flex flex-col items-center justify-center">
-                            {/* Curved Edge SVG overlay covering the seam */}
-                            <svg
-                              className="absolute left-0 top-0 h-full w-8 text-[#202020] -translate-x-[99%]"
-                              fill="currentColor"
-                              viewBox="0 0 100 100"
-                              preserveAspectRatio="none"
-                            >
-                              <path d="M100,0 Q0,50 100,100 Z" />
-                            </svg>
-
-                            <div className="text-center relative z-10 mb-4 mt-2">
-                              <h4 className="text-zinc-100 text-[13px] font-bold leading-tight">
-                                {link.name === 'Our Works' ? 'Projects & Events' : 'Join Relux'}
-                              </h4>
-                              <p className="text-zinc-400 text-[11px] mt-1.5">
-                                {link.name === 'Our Works' ? 'Explore our media gallery' : 'Zero Investment Franchise'}
-                              </p>
-                            </div>
-
-                            {/* Dummy Image Box matching Zeon red car setup */}
-                            <div className="relative w-full h-24 bg-[#18181b] border border-white/5 rounded-xl flex flex-col items-center justify-center shadow-inner group-hover:scale-105 transition-transform duration-500 overflow-hidden">
-                              <Zap className="w-8 h-8 text-[#4ade80]/80 mb-1" />
-                              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-[#4ade80]/10 to-transparent" />
-                            </div>
-                          </div>
+                          
                         </div>
                       </div>
                     )}

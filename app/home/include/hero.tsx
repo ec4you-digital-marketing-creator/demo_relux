@@ -41,15 +41,28 @@ export default function HomeHero() {
                 India&apos;s Most Trusted EV Charging Station Network
               </h1>
               <p className="text-white/65 text-[12px] md:text-[13px] leading-relaxed mb-5">
-                Relux Electric is building a reliable EV Charging Station network across India helping drivers, businesses, and fleet operators charge with confidence in cities, on highways, and everywhere in between.
+                Relux Electric builds the infrastructure for a cleaner, smarter, and more connected future of mobility. From reliable EV charging solutions to the systems that support their wider adoption, we make the transition to electric mobility simpler for businesses, communities, and drivers.
+                We’re not just installing chargers we’re helping build the infrastructure that moves India towards a more sustainable tomorrow.
+
               </p>
-              <Link
-                href="/locations"
-                className="group/btn relative inline-flex items-center justify-center gap-2 bg-[#00b14f] hover:bg-[#009b45] text-white font-bold text-[12px] px-5 py-2.5 rounded-full transition-all duration-300 shadow-[0_4px_16px_rgba(0,177,79,0.4)] hover:shadow-[0_8px_24px_rgba(0,177,79,0.55)] hover:-translate-y-0.5 overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-white/10 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300 ease-out" />
-                <span className="relative">Explore EV Charging Stations</span>
-              </Link>
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+
+                <Link
+                  href="/business/franchise"
+                  className="group/btn relative inline-flex items-center justify-center gap-2 bg-[#00b14f] hover:bg-[#009b45] text-white font-bold text-[12px] px-5 py-2.5 rounded-full transition-all duration-300 shadow-[0_4px_16px_rgba(0,177,79,0.4)] hover:shadow-[0_8px_24px_rgba(0,177,79,0.55)] hover:-translate-y-0.5 overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-white/10 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300 ease-out" />
+                  <span className="relative">Partner With Us</span>
+                </Link>
+                <Link
+                  href="/products"
+                  className="group/btn relative inline-flex items-center justify-center gap-2 bg-[#00b14f] hover:bg-[#009b45] text-white font-bold text-[12px] px-5 py-2.5 rounded-full transition-all duration-300 shadow-[0_4px_16px_rgba(0,177,79,0.4)] hover:shadow-[0_8px_24px_rgba(0,177,79,0.55)] hover:-translate-y-0.5 overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-white/10 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300 ease-out" />
+                  <span className="relative">View Our Products</span>
+                </Link>
+
+              </div>
             </div>
           </div>
         </div>

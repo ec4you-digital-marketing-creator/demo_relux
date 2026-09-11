@@ -1,26 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { MoveRight, Zap, CheckCircle2, Info } from "lucide-react";
 import EnquiryModal from "./EnquiryModal";
-import { BASE_URL } from "@/app/ui/baceurl";
 
 const DEFAULT_MODELS = [
-  {
-    title: "MINI 30KW",
-    subtitle: "30 KW POWER SETUP",
-    capacity: "30 kW",
-    price: "₹ 5 Lakhs",
-    space: "200 sq. ft",
-    features: [
-      "Space Requirement: 200 sq. ft",
-      "ARAI Certified",
-      "IP55 / IP66 Protection",
-      "Avg. EB Tariff: ₹12/unit",
-    ],
-    desc: "Compact DC fast charger suitable for restaurants, resorts & urban hubs.",
-    image: "/franchise/30 kW.webp",
-  },
   {
     title: "STD 60KW",
     subtitle: "60 KW POWER SETUP",
@@ -31,10 +15,12 @@ const DEFAULT_MODELS = [
       "Space Requirement: 400 sq. ft",
       "ARAI Certified",
       "IP55 / IP66 Protection",
-      "Avg. EB Tariff: ₹12/unit",
     ],
     desc: "Dual CCS2 fast charger ideal for busy state highways and city centers.",
     image: "/franchise/60 kW.webp",
+    income: "₹ 10,000 / month",
+    units: "4,000 units / month",
+    returns: "₹ 16,00,000",
   },
   {
     title: "STD 120KW",
@@ -46,10 +32,12 @@ const DEFAULT_MODELS = [
       "Space Requirement: 500 sq. ft",
       "ARAI Certified",
       "IP55 / IP66 Protection",
-      "Avg. EB Tariff: ₹12/unit",
     ],
     desc: "Heavy-duty ultra fast dual gun station for expressways & high traffic.",
     image: "/franchise/120 kW.webp",
+    income: "₹ 20,000 / month",
+    units: "8,000 units / month",
+    returns: "₹ 32,00,000",
   },
   {
     title: "SUPER HUB",
@@ -61,70 +49,20 @@ const DEFAULT_MODELS = [
       "Space Requirement: 3,000 sq. ft",
       "ARAI Certified",
       "IP55 / IP66 Protection",
-      "Avg. EB Tariff: ₹12/unit",
     ],
     desc: "Multi-gun charging canopy hub for fleet operators & commercial plazas.",
     image: "/franchise/Super Hub.webp",
+    income: "₹ 1,00,000 / month",
+    units: "15,000 units / month",
+    returns: "₹ 1,60,00,000",
   },
-  // {
-  //   title: "MEGA HUB",
-  //   subtitle: "360 KW POWER SETUP",
-  //   capacity: "360 kW",
-  //   price: "₹ 2 Crore",
-  //   space: "5,000 – 100,000 sq. ft",
-  //   features: [
-  //     "Space Requirement: 5,000–100,000 sq. ft",
-  //     "ARAI Certified",
-  //     "IP55 / IP66 Protection",
-  //     "Avg. EB Tariff: ₹12/unit",
-  //   ],
-  //   desc: "Flagship multi-dispenser EV plaza supporting cars, buses & trucks.",
-  //   image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80",
-  // },
+
 ];
 
 export default function FranchiseModels() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedModel, setSelectedModel] = useState("");
-  const [models, setModels] = useState<any[]>(DEFAULT_MODELS);
-
-  useEffect(() => {
-    const fetchModels = async () => {
-      try {
-        const response = await fetch(`${BASE_URL}/api/franchise-model-cards/`);
-        if (response.ok) {
-          const data = await response.json();
-          if (data && data.length > 0) {
-            setModels(
-              data.map((item: any, idx: number) => {
-                const fallback = DEFAULT_MODELS[idx] || DEFAULT_MODELS[0];
-                return {
-                  title: item.title || fallback.title,
-                  subtitle: item.capacity ? `${item.capacity.toUpperCase()} POWER SETUP` : fallback.subtitle,
-                  capacity: item.capacity || fallback.capacity,
-                  price: item.price || fallback.price,
-                  space: item.space || fallback.space,
-                  features:
-                    Array.isArray(item.features) && item.features.length > 0
-                      ? item.features
-                      : fallback.features,
-                  desc: item.desc || fallback.desc,
-                  image: item.image
-                    ? item.image.startsWith("http")
-                      ? item.image
-                      : `${BASE_URL}${item.image}`
-                    : fallback.image,
-                };
-              })
-            );
-          }
-        }
-      } catch (error) {
-        console.error("Error fetching franchise models:", error);
-      }
-    };
-    fetchModels();
-  }, []);
+  const models = DEFAULT_MODELS;
 
   const handleEnquiry = (title: string) => {
     setSelectedModel(title);
@@ -146,20 +84,19 @@ export default function FranchiseModels() {
             OUR EV CHARGING FRANCHISE MODELS
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tight leading-tight">
-            FIND THE RIGHT SETUP   <span className="text-[#00b14f]">FOR YOUR LOCATION</span>
+            EXPLORE OUR <span className="text-[#00b14f]">MODELS</span>
           </h2>
           <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium">
-            Not every site needs the same charging capacity.
-            A city location with limited space has different requirements from a highway site or a large commercial property. Relux offers multiple charging configurations so the infrastructure can be matched to the location.
+            Relux offers a refundable business model with guaranteed monthly income, specifically tailored to suit the unique needs of your site. Whether it’s a city location with limited space, a highway site or large commercial property, we offer flexible models to best match your location. We also provide EMI options to make getting started more accessible.
           </p>
         </div>
 
-        {/* 5 Cards Grid - Fully Responsive across all devices */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 md:gap-6 items-stretch w-full">
+        {/* 3 Cards Grid - Center Aligned */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 items-stretch w-full max-w-6xl mx-auto">
           {models.map((model, idx) => (
             <div
               key={idx}
-              className="bg-white border border-slate-100 rounded-4xl p-4 sm:p-5 shadow-lg hover:shadow-2xl hover:border-[#00b14f]/40 transition-all duration-300 flex flex-col justify-between text-left group"
+              className="w-full bg-white border border-slate-100 rounded-4xl p-4 sm:p-5 shadow-lg hover:shadow-2xl hover:border-[#00b14f]/40 transition-all duration-300 flex flex-col justify-between text-left group"
             >
               {/* Image Header with Price Badge */}
               <div className="relative h-40 sm:h-44 w-full rounded-2xl overflow-hidden bg-slate-100 mb-5">
@@ -213,7 +150,7 @@ export default function FranchiseModels() {
               </div>
 
               {/* Bullet Features List with Green Checkmarks */}
-              <div className="space-y-2.5 mb-6 flex-1">
+              <div className="space-y-2.5 mb-5 flex-1">
                 {model.features && model.features.length > 0 && (
                   model.features.map((feat: string, fIdx: number) => (
                     <div key={fIdx} className="flex items-start gap-2 text-xs text-slate-700 font-semibold leading-snug">
@@ -223,6 +160,31 @@ export default function FranchiseModels() {
                   ))
                 )}
               </div>
+
+              {/* Guaranteed Income Stats */}
+              {(model.income || model.units || model.returns) && (
+                <div className="mb-5 rounded-2xl bg-[#0a1a10] border border-[#00b14f]/25 p-4 space-y-2.5">
+                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#00b14f] mb-3">Guaranteed Returns</p>
+                  {model.income && (
+                    <div className="flex items-center justify-between">
+                      <span className="text-white/60 text-[11px] font-semibold">Min. Monthly Income</span>
+                      <span className="text-white font-extrabold text-[12px]">{model.income}</span>
+                    </div>
+                  )}
+                  {model.units && (
+                    <div className="flex items-center justify-between">
+                      <span className="text-white/60 text-[11px] font-semibold">Threshold Units</span>
+                      <span className="text-white font-extrabold text-[12px]">{model.units}</span>
+                    </div>
+                  )}
+                  {model.returns && (
+                    <div className="flex items-center justify-between border-t border-white/10 pt-2.5 mt-1">
+                      <span className="text-white/60 text-[11px] font-semibold">Est. Returns</span>
+                      <span className="text-[#00b14f] font-extrabold text-[13px]">{model.returns}</span>
+                    </div>
+                  )}
+                </div>
+              )}
 
               {/* ENQUIRE NOW → Button */}
               <button

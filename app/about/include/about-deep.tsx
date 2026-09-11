@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import OurGoals from "./our-goals";
 import {
   FiZap, FiMapPin, FiHeadphones, FiTrendingUp,
   FiShield, FiCheckCircle, FiFlag, FiCpu,
@@ -194,10 +195,12 @@ export default function AboutDeep() {
         </div>
       </div>
 
+      <OurGoals />
+
       {/* ══════════════════════════════════════════════
           4. What We Offer
       ══════════════════════════════════════════════ */}
-      <div className="relative py-16 md:py-24 border-t border-white/6">
+      {/* <div className="relative py-16 md:py-24 border-t border-white/6">
         <div className="absolute bottom-0 left-0 w-100 h-100 bg-[#00b14f]/5 blur-[110px] rounded-full -translate-x-1/2 translate-y-1/4 pointer-events-none" />
 
         <div className="max-w-6xl mx-auto px-3">
@@ -207,17 +210,17 @@ export default function AboutDeep() {
               EV CHARGING IS MORE THAN{" "}
               <span className="text-[#00b14f]">THE CHARGER.</span>
             </h2>
-          </motion.div>
+          </motion.div> */}
 
           {/* Intro Narrative */}
-          <motion.div {...fadeUp(0.1)} className="mt-6 max-w-3xl">
+          {/* <motion.div {...fadeUp(0.1)} className="mt-6 max-w-3xl">
             <p className="text-white/80 text-base md:text-lg leading-relaxed border-l-2 border-[#00b14f] pl-4">
               A successful charging station depends on everything around the charger—from the site and power connection to software, installation, payments and ongoing maintenance.
             </p>
-          </motion.div>
+          </motion.div> */}
 
           {/* 5 Core Offerings Horizontal Lifecycle List */}
-          <div className="mt-10 divide-y divide-white/10 border-t border-b border-white/10">
+          {/* <div className="mt-10 divide-y divide-white/10 border-t border-b border-white/10">
             {[
               {
                 icon: FiMapPin,
@@ -269,12 +272,12 @@ export default function AboutDeep() {
           </div>
 
         </div>
-      </div>
+      </div> */}
 
       {/* ══════════════════════════════════════════════
           5. Charging Technology
       ══════════════════════════════════════════════ */}
-      <div className="relative py-16 md:py-24 border-t border-white/6">
+      {/* <div className="relative py-16 md:py-24 border-t border-white/6">
         <div className="absolute top-1/2 right-0 w-125 h-100 bg-[#00b14f]/5 blur-[130px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
         <div className="max-w-6xl mx-auto px-6">
@@ -284,17 +287,17 @@ export default function AboutDeep() {
               BUILT ON RECOGNISED STANDARDS, NOT{" "}
               <span className="text-[#00b14f]">PROPRIETARY LOCK-IN</span>
             </h2>
-          </motion.div>
+          </motion.div> */}
 
           {/* Intro Narrative */}
-          <motion.div {...fadeUp(0.1)} className="mt-8 max-w-4xl">
+          {/* <motion.div {...fadeUp(0.1)} className="mt-8 max-w-4xl">
             <p className="text-white/80 text-base md:text-lg leading-relaxed bg-white/3 border border-white/6 rounded-2xl p-6 md:p-8 hover:border-[#00b14f]/30 transition-colors">
               Relux works across the major AC and DC charging standards used in India, with charging capacities from 120 kW to 1 MW — from passenger vehicles to commercial and fleet applications.
             </p>
-          </motion.div>
+          </motion.div> */}
 
           {/* 6 Standards Cards Grid */}
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 title: "Bharat AC-001",
@@ -348,10 +351,10 @@ export default function AboutDeep() {
                 </motion.div>
               );
             })}
-          </div>
+          </div> */}
 
           {/* Action Button & Footer Note */}
-          <motion.div {...fadeUp(0.4)} className="mt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 bg-white/3 border border-white/6 rounded-2xl p-6 md:p-8">
+          {/* <motion.div {...fadeUp(0.4)} className="mt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 bg-white/3 border border-white/6 rounded-2xl p-6 md:p-8">
             <p className="text-white/70 text-sm md:text-base font-medium max-w-xl">
               Newer installations can also integrate renewable energy and battery storage where the site requires it.
             </p>
@@ -364,7 +367,7 @@ export default function AboutDeep() {
           </motion.div>
 
         </div>
-      </div>
+      </div> */}
 
       {/* ══════════════════════════════════════════════
           GREEN BAND — Built For Different Roads
@@ -468,7 +471,7 @@ export default function AboutDeep() {
       {/* ══════════════════════════════════════════════
           8. Why Businesses Choose Relux
       ══════════════════════════════════════════════ */}
-      <div className="relative py-16 md:py-24 border-t border-white/6">
+      {/* <div className="relative py-16 md:py-24 border-t border-white/6">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-100 bg-[#00b14f]/5 blur-[140px] rounded-full pointer-events-none" />
 
         <div className="max-w-6xl mx-auto px-6">
@@ -529,7 +532,7 @@ export default function AboutDeep() {
             })}
           </div>
         </div>
-      </div>
+      </div> */}
 
 
       {/* ══════════════════════════════════════════════
@@ -581,17 +584,17 @@ export default function AboutDeep() {
       {/* ══════════════════════════════════════════════
           9. Compliance Banner
       ══════════════════════════════════════════════ */}
-      <div className="relative py-12 md:py-20 border-t border-white/6">
+      {/* <div className="relative py-12 md:py-20 border-t border-white/6">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             {...fadeUp(0.2)}
             className="relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 px-8 md:px-12 py-10 rounded-3xl border border-[#00b14f]/30 bg-gradient-to-r from-[#00b14f]/10 via-white/[0.03] to-white/[0.01] backdrop-blur-xl overflow-hidden shadow-2xl shadow-[#00b14f]/5 group hover:border-[#00b14f]/50 transition-all duration-500"
-          >
+          > */}
             {/* Top border glow line */}
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00b14f] to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
+            {/* <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00b14f] to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300" /> */}
 
             {/* Background glowing blurred circles */}
-            <div className="absolute -left-20 -top-20 w-64 h-64 bg-[#00b14f]/15 blur-[90px] rounded-full pointer-events-none group-hover:bg-[#00b14f]/25 transition-all duration-700" />
+            {/* <div className="absolute -left-20 -top-20 w-64 h-64 bg-[#00b14f]/15 blur-[90px] rounded-full pointer-events-none group-hover:bg-[#00b14f]/25 transition-all duration-700" />
             <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-[#00b14f]/10 blur-[90px] rounded-full pointer-events-none" />
 
             <div className="relative z-10 max-w-5xl">
@@ -623,7 +626,7 @@ export default function AboutDeep() {
                   </span>
                 ))}
               </div>
-            </div>
+            </div> */}
 
             {/* <Link
               href="/contact"
@@ -634,9 +637,9 @@ export default function AboutDeep() {
                 →
               </span>
             </Link> */}
-          </motion.div>
+          {/* </motion.div>
         </div>
-      </div>
+      </div> */}
       {/* ══════════════════════════════════════════════
           6. Where To Find Us
       ══════════════════════════════════════════════ */}

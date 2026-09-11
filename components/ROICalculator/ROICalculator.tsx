@@ -107,31 +107,19 @@ export default function ROICalculator() {
   }, "");
 
   return (
-    <section id="roi-calculator" className="w-full py-12 md:py-20 bg-[#f7fdf9] text-zinc-900 font-sans border-b border-zinc-200">
+    <section id="roi-calculator" className="w-full py-12 md:py-16 bg-white text-zinc-900 font-sans border-b border-zinc-200">
       <div className="max-w-7xl mx-auto px-4 md:px-6 space-y-6">
         
         {/* ============================================================ */}
         {/* SECTION HEADER */}
         {/* ============================================================ */}
         <div className="text-center max-w-4xl mx-auto space-y-2.5 mb-8">
-          <span className="text-[#00873d] text-[11px] font-black uppercase">
+          <span className="text-[#00b14f] text-xs font-black uppercase tracking-[0.3em]">
             INTERACTIVE ROI TOOL
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 tracking-tight leading-tight">
-            Calculate Your Franchise Returns
-            <svg
-              className="w-28 sm:w-36 h-2.5 text-[#00873d] mx-auto mt-1.5"
-              viewBox="0 0 100 10"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M2 7C30 2 70 2 98 7"
-                stroke="currentColor"
-                strokeWidth="3.5"
-                strokeLinecap="round"
-              />
-            </svg>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-black uppercase tracking-tight leading-tight">
+            Calculate Your Franchise{" "}
+            <span className="text-[#00b14f]">Returns</span>
           </h2>
           <p className="text-zinc-600 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto font-semibold">
             Select your charger plan, adjust daily charging sessions, and project your exact 5-year net profits & payback timeline.
@@ -616,76 +604,14 @@ export default function ROICalculator() {
         </div>
 
         {/* ============================================================ */}
-        {/* 3. BOTTOM FEATURES BANNER (5-ITEM FEATURE ROW) */}
+        {/* 3. CTA BUTTON */}
         {/* ============================================================ */}
-        <div className="bg-white border border-zinc-200 rounded-3xl p-4 sm:p-5 flex flex-wrap items-center justify-between gap-4 shadow-sm">
-          {/* Feature 1 */}
-          <div className="flex items-center gap-3">
-            <span className="p-2 bg-emerald-100 rounded-xl text-[#00873d]">
-              <Leaf className="w-5 h-5" />
-            </span>
-            <div>
-              <span className="text-xs font-black text-zinc-900 block">
-                Clean Energy
-              </span>
-              <span className="text-[10px] text-zinc-500 font-semibold block">
-                A Greener Planet
-              </span>
-            </div>
-          </div>
-
-          {/* Feature 2 */}
-          <div className="flex items-center gap-3">
-            <span className="p-2 bg-emerald-100 rounded-xl text-[#00873d]">
-              <Car className="w-5 h-5" />
-            </span>
-            <div>
-              <span className="text-xs font-black text-zinc-900 block">
-                Growing EV Demand
-              </span>
-              <span className="text-[10px] text-zinc-500 font-semibold block">
-                Future Ready Business
-              </span>
-            </div>
-          </div>
-
-          {/* Feature 3 */}
-          <div className="flex items-center gap-3">
-            <span className="p-2 bg-emerald-100 rounded-xl text-[#00873d]">
-              <Landmark className="w-5 h-5" />
-            </span>
-            <div>
-              <span className="text-xs font-black text-zinc-900 block">
-                Govt. Support
-              </span>
-              <span className="text-[10px] text-zinc-500 font-semibold block">
-                Faster Adoption
-              </span>
-            </div>
-          </div>
-
-          {/* Feature 4 */}
-          <div className="flex items-center gap-3">
-            <span className="p-2 bg-emerald-100 rounded-xl text-[#00873d]">
-              <TrendingUp className="w-5 h-5" />
-            </span>
-            <div>
-              <span className="text-xs font-black text-zinc-900 block">
-                Scalable Model
-              </span>
-              <span className="text-[10px] text-zinc-500 font-semibold block">
-                Expand with Confidence
-              </span>
-            </div>
-          </div>
-
-          {/* Feature 5 / CTA Button */}
+        <div className="flex justify-center pt-2">
           <a
             href="/contact"
-            className="bg-[#00873d] hover:bg-[#007334] text-white font-extrabold px-5 py-3 rounded-2xl text-xs flex items-center gap-2 transition-all shadow-md hover:shadow-lg shrink-0"
+            className="inline-flex items-center gap-2 bg-[#00b14f] hover:bg-[#009643] text-white font-extrabold px-8 py-4 rounded-full text-sm uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-lg hover:scale-[1.03]"
           >
-            <span>Start Your Green Investment</span>
-            <ArrowRight className="w-4 h-4" />
+            Make An Enquiry
           </a>
         </div>
 

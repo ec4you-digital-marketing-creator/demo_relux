@@ -6,6 +6,7 @@ import ValuePropsSection from "./include/ValuePropsSection";
 import HowItWorksSection from "./include/HowItWorksSection";
 import FranchiseModels from "./include/franchisemodel";
 import WhatAreYouInvestingIn from "./include/WhatAreYouInvestingIn";
+import FranchiseTerms from "./include/FranchiseTerms";
 import ChargingTimesSection from "./include/ChargingTimesSection";
 import PaybackAndRoiSection from "./include/PaybackAndRoiSection";
 import RequirementsSection from "./include/RequirementsSection";
@@ -67,14 +68,16 @@ export default function FranchisePage() {
       <FranchiseModels />
       {/* What Are You Investing In Section */}
       <WhatAreYouInvestingIn />
+      {/* Franchise Terms & Guidelines */}
+      <FranchiseTerms />
       {/* How It Works Section */}
-      <HowItWorksSection />
+      {/* <HowItWorksSection /> */}
       {/* Why Partner With RELUX? */}
-      <WhyPartnerSection />
+      {/* <WhyPartnerSection /> */}
       {/* 7. Franchise Requirements */}
-      <RequirementsSection />
+      {/* <RequirementsSection /> */}
       {/* 7b. Suitable Partner Profiles */}
-      <SuitablePartnerSection />
+      {/* <SuitablePartnerSection /> */}
 
 
 
@@ -84,7 +87,7 @@ export default function FranchisePage() {
 
 
       {/* Technology Section */}
-      <TechnologySection />
+      {/* <TechnologySection /> */}
 
       {/* 3. What Relux Brings For You (Value Proposition) */}
       {/* <ValuePropsSection /> */}
