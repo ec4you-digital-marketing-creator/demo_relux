@@ -111,7 +111,7 @@ export default function Navbar() {
                     {/* Mega Dropdown Menu (Zeon-style structure adapted for current theme) */}
                     {link.subMenu && (
                       <div className="absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-4 group-hover:translate-y-0 scale-95 group-hover:scale-100 transition-all duration-300 ease-out z-70">
-                        <div className="w-52 bg-[#151515] border border-white/10 rounded-2xl shadow-[0_30px_60px_rgba(0,0,0,0.8)] flex relative overflow-hidden flex-col justify-start items-start p-4 hover:translate-x-2 transition-all duration-300 ease-out space-y-3">
+                        <div className="w-52 bg-[#151515] border border-white/10 rounded-2xl shadow-[0_30px_60px_rgba(0,0,0,0.8)] flex relative overflow-hidden flex-col justify-start items-start p-4 space-y-3">
                           
                           {/* Left: Simple Menu Links */}
                         
@@ -123,7 +123,7 @@ export default function Navbar() {
                                   href={subItem.href}
                                   prefetch={false}
                                   onClick={(e) => handleLinkClick(subItem.href, e)}
-                                  className={`text-[14px] font-medium transition-all duration-300 hover:translate-x-1 ${
+                                  className={`text-[14px] font-medium transition-all duration-300 hover:translate-x-1 ease-out ${
                                     isSubActive ? 'text-[#4ade80]' : 'text-zinc-400 hover:text-white'
                                   }`}
                                 >
