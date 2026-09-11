@@ -162,7 +162,7 @@ export default function FranchiseModels() {
               </div>
 
               {/* Guaranteed Income Stats */}
-              {(model.income || model.units || model.returns) && (
+              {/* {(model.income || model.units || model.returns) && (
                 <div className="mb-5 rounded-2xl bg-[#0a1a10] border border-[#00b14f]/25 p-4 space-y-2.5">
                   <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#00b14f] mb-3">Guaranteed Returns</p>
                   {model.income && (
@@ -184,7 +184,7 @@ export default function FranchiseModels() {
                     </div>
                   )}
                 </div>
-              )}
+              )} */}
 
               {/* ENQUIRE NOW → Button */}
               <button
